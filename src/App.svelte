@@ -1,10 +1,15 @@
 <script>
+	import { onMount } from 'svelte';
+
 	export let character;
 	export let backgrounds;
+	export let selectBackground;
+
+	onMount(() => selectBackground(character));
 </script>
 
 <main>
-	<h1>Unconquered</h1>
+	<h1>{character.name}</h1>
 	<p></p>
 
 	<h2>Stats</h2>
@@ -44,8 +49,17 @@
 			{/each}
 		</select>
 	</label>
+	{#if character.background != null}{@html character.background.description}{/if}
 
-	<h2>Vocation: {character.vocation}</h2>
+	<h2>Description</h2>
+	<dl>
+		{#each character.description as { title, value } }
+			<dt>{title}</dt>
+			<dd>{value}</dd>
+		{/each}
+	</dl>
+
+	<h2>Vocation: {character.vocations}</h2>
 
 	<h2>Possessions</h2>
 	<dl>

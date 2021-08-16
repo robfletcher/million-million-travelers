@@ -1,5 +1,5 @@
 import App from './App.svelte';
-import { roll1d20, roll1d6, roll3d6 } from './dice.js';
+import { roll2d6, roll3d6, table2D6, tableD20, tableD66 } from './dice.js';
 import { backgrounds } from './backgrounds.js';
 import { vocations } from './vocations.js';
 
@@ -8,6 +8,7 @@ const app = new App({
 	props: {
 		backgrounds: backgrounds,
 		character: {
+			name: '',
 			attributes: {
 				silver: roll3d6(),
 				salt: roll3d6(),
@@ -18,10 +19,20 @@ const app = new App({
 			xp: 0,
 			will: 0,
 			stamina: 0,
-			background: backgrounds[roll1d20() - 1],
-			vocation: vocations[roll1d6() - 1][roll1d6() - 1],
+			background: null,
+			description: [],
+			vocations: tableD66(vocations),
 			blackGlass: roll3d6() + 10
-		},
+		},	
+		selectBackground: (character) => {
+			character.background = tableD20(backgrounds);
+			character.name = table2D6(character.background.names);
+			character.description = [];
+			character.background.tables.forEach(table => {
+				character.description.push({ title: table.title, value: table2D6(table.table) });
+			});
+			console.log(character.description);
+		}
 	}
 });
 
