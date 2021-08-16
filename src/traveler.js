@@ -1,9 +1,11 @@
-import { roll1d3, roll3d6, roll3d6dropLowest, table1D6, table2D6, tableD20, tableD66 } from './dice.js';
-import { backgrounds } from './backgrounds.js';
-import { vocations } from './vocations.js';
-import { randomArmor } from './armor.js';
-import { randomWeapon } from './weapons.js';
-import { randomItem } from './belongings.js';
+import { roll1d3, roll3d6, roll3d6dropLowest, table1D6, table2D6, tableD20, tableD66 } from './dice';
+import { backgrounds } from './backgrounds';
+import { vocations } from './vocations';
+import { randomArmor } from './armor';
+import { randomWeapon } from './weapons';
+import { randomItem } from './belongings';
+import { randomGift } from './gifts';
+import { randomComplication } from './complications';
 
 export class Traveler {
   constructor() {
@@ -27,9 +29,11 @@ export class Traveler {
       gearBubbles: 5,
       weapons: [],
       armor: [],
-      belongings: [randomItem(), randomItem(), randomItem()]
+      belongings: [randomItem(), randomItem(), randomItem()],
+      gift: randomGift()
     };
     this.extra = table1D6(this.#extras)();
+    this.complication = randomComplication();
   };
 
   #extras = [

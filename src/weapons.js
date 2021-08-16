@@ -1,4 +1,4 @@
-import { tableD20 } from './dice.js';
+import { tableD20 } from './dice';
 
 const weapons = {
   aspects: ['Ritual', 'Nomad', 'Parasitic', 'Masterwork', 'Crude', 'Venomous', 'Copper', 'Meteoric', 'Obsidian', 'Silver', 'Brass', 'Fungal', 'Vorpal', 'Clockwork', 'Ancient', 'Corroded', 'Alien', 'Stone', 'Bronze', 'Ceremonial'],

@@ -53,6 +53,9 @@
 					<th>Vocation</th><td>{traveler.vocations.join(', ')}</td>
 				</tr>
 				<tr>
+					<th>Complication</th><td>{traveler.complication}</td>
+				</tr>
+				<tr>
 					<th>Extras</th><td>{traveler.extra}</td>
 				</tr>
 			</table>
@@ -86,29 +89,33 @@
 				<tr><th>Black glass</th><td>{traveler.blackGlass}G</td></tr>
 				<tr><th>Inventory slots</th><td>{traveler.usedSlots()}/{traveler.inventory.slots}</td></tr>
 				<tr><th>Gear bubbles</th><td>{traveler.inventory.gearBubbles}</td></tr>
+				{#each traveler.inventory.weapons as { description, type }, i }
 				<tr>
-					<th>Weapons</th>
-					<td>
-						{#each traveler.inventory.weapons as { description, type } }
-							<p>{description} <small>{type}</small></p>
-						{/each}
-					</td>
+					{#if i === 0}
+					<th rowspan={traveler.inventory.weapons.length}>Weapons</th>
+					{/if}
+					<td class="spanned">{description} <small>{type}</small></td>
 				</tr>
+				{/each}
+				{#each traveler.inventory.armor as { description, type }, i }
 				<tr>
-					<th>Armor</th>
-					<td>
-						{#each traveler.inventory.armor as { description, type } }
-							<p>{description} <small>{type}</small></p>
-						{/each}
-					</td>
+					{#if i === 0}
+					<th rowspan={traveler.inventory.armor.length}>Armor</th>
+					{/if}
+					<td class="spanned">{description} <small>{type}</small></td>
 				</tr>
+				{/each}
+				{#each traveler.inventory.belongings as { description }, i }
 				<tr>
-					<th>Belongings</th>
-					<td>
-						{#each traveler.inventory.belongings as { description } }
-							<p>{description}</p>
-						{/each}
-					</td>
+					{#if i === 0}
+					<th rowspan={traveler.inventory.belongings.length}>Belongings</th>
+					{/if}
+					<td class="spanned">{description}</td>
+				</tr>
+				{/each}
+				<tr>
+					<th>Gift</th>
+					<td>{@html traveler.inventory.gift}</td>
 				</tr>
 			 </table>			
 		</section>
@@ -120,6 +127,10 @@
 	th {
 		text-align: right;
 		vertical-align: text-top;
+	}
+
+	td.spanned {
+		padding-left: 1.5rem;
 	}
 
 	label {

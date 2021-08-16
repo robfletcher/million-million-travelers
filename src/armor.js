@@ -1,4 +1,4 @@
-import { tableD20 } from './dice.js';
+import { tableD20 } from './dice';
 
 const armor = {
   aspects: ['Ancestral', 'Studded', 'Nomad', 'Spiked', 'Bronze', 'Fur-lined', 'Copper', 'Silk-lined', 'Brass', 'Tarnished', 'Ancient', 'Fungal', 'Ceremonial', 'Gaudy', 'Corroded', 'Ornate', 'Ritual', 'Stone', 'Masterwork', 'Alien'],
