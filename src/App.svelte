@@ -81,30 +81,35 @@
 		</section>
 
 		<section class="column">
-			<h2>Possessions</h2>
+			<h2>Belongings</h2>
 			 <table>
-				<tr><th>Black glass</th>
-				<td>{traveler.blackGlass}G</td></tr>
-				<tr><th>Inventory slots</th>
-				<td>{traveler.inventory.slots}</td></tr>
-				<tr><th>Gear bubbles</th>
-				<td>{traveler.inventory.gearBubbles}</td></tr>
-				<tr><th>Weapons</th>
-				<td>
-					<ul>
+				<tr><th>Black glass</th><td>{traveler.blackGlass}G</td></tr>
+				<tr><th>Inventory slots</th><td>{traveler.usedSlots()}/{traveler.inventory.slots}</td></tr>
+				<tr><th>Gear bubbles</th><td>{traveler.inventory.gearBubbles}</td></tr>
+				<tr>
+					<th>Weapons</th>
+					<td>
 						{#each traveler.inventory.weapons as { description, type } }
-							<li>{description} <small>{type}</small></li>
+							<p>{description} <small>{type}</small></p>
 						{/each}
-					</ul>
-				</td></tr>
-				<tr><th>Armor</th>
-				<td>
-					<ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Armor</th>
+					<td>
 						{#each traveler.inventory.armor as { description, type } }
-							<li>{description} <small>{type}</small></li>
+							<p>{description} <small>{type}</small></p>
 						{/each}
-					</ul>
-				</td></tr>
+					</td>
+				</tr>
+				<tr>
+					<th>Belongings</th>
+					<td>
+						{#each traveler.inventory.belongings as { description } }
+							<p>{description}</p>
+						{/each}
+					</td>
+				</tr>
 			 </table>			
 		</section>
 	</div>

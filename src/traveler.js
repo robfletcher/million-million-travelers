@@ -1,7 +1,9 @@
 import { roll1d3, roll3d6, roll3d6dropLowest, table1D6, table2D6, tableD20, tableD66 } from './dice.js';
 import { backgrounds } from './backgrounds.js';
 import { vocations } from './vocations.js';
-import { randomArmor, randomWeapon } from './weapons.js';
+import { randomArmor } from './armor.js';
+import { randomWeapon } from './weapons.js';
+import { randomItem } from './belongings.js';
 
 export class Traveler {
   constructor() {
@@ -24,7 +26,8 @@ export class Traveler {
       slots: 10,
       gearBubbles: 5,
       weapons: [],
-      armor: []
+      armor: [],
+      belongings: [randomItem(), randomItem(), randomItem()]
     };
     this.extra = table1D6(this.#extras)();
   };
@@ -79,5 +82,11 @@ export class Traveler {
       this.description.push({ title: table.title, value: table2D6(table.table) });
     });
     this.description = this.description;
+  };
+
+  usedSlots = () => {
+    const mapper = (it) => it.slots
+    const reducer = (a, b) => a + b;
+    return this.inventory.weapons.map(mapper).reduce(reducer) + this.inventory.armor.map(mapper).reduce(reducer) + this.inventory.belongings.map(mapper).reduce(reducer);
   }
 }
