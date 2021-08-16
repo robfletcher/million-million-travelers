@@ -1,4 +1,4 @@
-import { roll1d3, roll3d6, table1D6, table2D6, tableD20, tableD66 } from './dice.js';
+import { roll1d3, roll3d6, roll3d6dropLowest, table1D6, table2D6, tableD20, tableD66 } from './dice.js';
 import { backgrounds } from './backgrounds.js';
 import { vocations } from './vocations.js';
 import { randomArmor, randomWeapon } from './weapons.js';
@@ -9,9 +9,9 @@ export class Traveler {
     this.name = '';
     this.description = [];
     this.attributes = {
-      silver: roll3d6(), // TODO: should be 4d6kh3
-      salt: roll3d6(),
-      iron: roll3d6()
+      silver: roll3d6dropLowest(),
+      salt: roll3d6dropLowest(),
+      iron: roll3d6dropLowest()
     };
     this.archetype = 'Sword';
     this.level = 1;
