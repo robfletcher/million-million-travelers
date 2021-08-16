@@ -457,245 +457,245 @@ export const backgrounds = [
   {
     name:'Rakeshi',
     description: '<p>A race of statuesque, luxuriously-furred humanoids of feline appearance. Carrying with them a natural confidence and aristocratic bearing, they are imposing physical specimens. Rakeshi culture prioritizes scholarly pursuits over all else.</p>',
-    names: ['', '', '', '', '', '', '', '', '', '', ''],
+    names: ['Lucius', 'Kashi', 'Kavach', 'Hapu', 'Zakros', 'Javeed', 'Ramesh', 'Zuvon', 'Zabihi', 'Syba', 'Zhang'],
     tables: [
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Mien',
+        table: ['Cheetah', 'Tiger', 'Tiger', 'Lion', 'Lion', 'Panther', 'Panther', 'Leopard', 'Leopard', 'Jaguar', 'Jaguar']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birthplace',
+        table: ['Boreal Thule', 'The Jungles of Unnan', 'Pastoral Arish', 'The Serpent Valley', 'Inah, the Great Green Ocean', 'The Great Swamp of Akkash', 'A Hyperborean Taiga', 'The Steppes of Kisho', 'Urukkhet, the City of Steps', 'The Red Plains of Alech', 'Upon the banks of the River Gyoll']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Distinction',
+        table: ['Gold incisors', 'Gold chain', 'Missing limb', 'Silver whiskers', 'Silver claws', 'Second pair of eyes', 'Fish-breath', 'Glowing tattoos', 'Jade eyes', 'Scarred eye', 'Shorn tail']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Frame',
+        table: ['Athletic', 'Soft', 'Muscular', 'Steely', 'Willowy', 'Heavy', 'Plump', 'Hoary', 'Delicate', 'Slim', 'Gaunt']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Discipline',
+        table: ['Epicureanism', 'Anarchism', 'Solipsism', 'Apotheotism', 'Stoicism', 'Existentialism', 'Deism', 'Nihilism', 'Acosmism', 'Cynicism', 'Sophism']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Fur',
+        table: ['Shaved', 'Cropped', 'Trimmed', 'Shaggy', 'Luxurious', 'Scorched', 'Silky', 'Oiled', 'Scarred', 'Braided', 'Painted']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Attire',
+        table: ['Magnificent robes', 'Scrapper’s ensemble', 'Scholarly vestments', 'Brief satins', 'Sumptuous attire', 'Frayed vestments', 'Eccentric garb', 'Stained robes', 'Expensive finery', 'Bloody robes', 'Flamboyant costume']
       },
     ]
   },
   {
     name:'Kainji',
     description: '<p>One of the ten tribes of humans, the most numerous of the Gods’ mortal creations. Kainji are, on average, barrel- chested and broad-shouldered, with skin tones ranging from umber to ochre to a deep indigo. Hair is a status symbol among Kainji culture, and many Kainji seek greater status - or at least the appearance of such - with elaborate braids or plaits in their dark, coiled hair.</p>',
-    names: ['', '', '', '', '', '', '', '', '', '', ''],
+    names: ['Lai Lian', 'Zatorus', 'Malak', 'Korlus', 'Guruji', 'Intar’sei', 'Hamid', 'Navlaan', 'Sunil', 'Ereden', 'Arrae'],
     tables: [
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Strata',
+        table: ['Exile', 'Laborer', 'Laborer', 'Lowlander', 'Lowlander', 'Highlander', 'Highlander', 'Lettered', 'Lettered', 'Citadel-born', 'Citadel-born']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birthplace',
+        table: ['Things Betwixt', 'The Desolate Halls of Dis', 'Zakum', 'The Jungles of Unnan', 'Pastoral Arish', 'Urukkhet, the City of Steps', 'The Triskelion', 'The Gardens of Nergal', 'Inah, the Great Green Ocean', 'Nyvia’s Breath', 'The Stony Peaks of Evah']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Distinction',
+        table: ['Clone brand', 'Baritone voice', 'Face tattoos', 'Silver tongue', 'Second pair of eyes', 'Pleated beard', 'Missing limb', 'Brass armbands', 'Ritual scars', 'Golden teeth', 'Long pinky-nail']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Frame',
+        table: ['Scarred', 'Delicate', 'Bandaged', 'Aged', 'Plump', 'Tattooed', 'Youthful', 'Brawny', 'Well-fed', 'Soft', 'Tired']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Demeanor',
+        table: ['Pragmatist', 'Serene', 'Idealist', 'Stoic', 'Traditionalist', 'Scornful', 'Mercenary', 'Ambitious', 'Opportunistic', 'Prideful', 'Philosophical']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Hair',
+        table: ['Box braids', 'Red', 'Knots', 'Black', 'Twist out', 'White', 'Locs', 'Brown', 'Cropped', 'Silver', 'Bangs']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Attire',
+        table: ['Leaf dress', 'Musician’s finery', 'Laborer’s rags', 'Flimsy silks', 'Lowland leathers', 'Eccentric finery', 'Highland silks', 'Physician’s ensemble', 'Scholar’s livery', 'Scavenger’s leathers', 'Soldier’s livery']
       },
     ]
   },
   {
     name:'Yaksha',
     description: '<p>Nature spirits resembling humans with the legs, tails, and heads of goats. Fiercely communal, Yaksha are known for their ribaldry and love of music and dance. They make their homes in the deep parts of the Spheres and in general are only motivated to leave their communities under extraordinary circumstances.</p>',
-    names: ['', '', '', '', '', '', '', '', '', '', ''],
+    names: ['Nira', 'Naveed', 'Urshana', 'Salabus', 'Quan', 'Praveena', 'Feiyan', 'Haroun', 'Shria', 'Mira', 'Shan'],
     tables: [
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Clan',
+        table: ['Sun', 'Thorn', 'Sea', 'Frost', 'Moss', 'Bark', 'Branch', 'Stone', 'Sand', 'Brine', 'Moon']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birthplace',
+        table: ['Inah, the Great Green Ocean', 'Pastoral Arish', 'Urukkhet, the City of Steps', 'Hyrriah’s Crag', 'Nyvia’s Breath', 'Boreal Thule', 'Upon the banks of the River Gyoll', 'The Gardens of Nergal', 'Zun Rüt', 'A Hyperborean Taiga', 'The Lament']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Distinction',
+        table: ['Silver hand', 'Tufted tail', 'Extensive jewelry', 'Second pair of eyes', 'Ram’s horns', 'Braying tone', 'Swaying gait', 'Sheared horn', 'Missing limb', 'Scarred fur', 'Pronged antlers']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Frame',
+        table: ['Tired', 'Spry', 'Starved', 'Plump', 'Angular', 'Sturdy', 'Slim', 'Muscular', 'Mature', 'Hunched', 'Bandaged']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Passion',
+        table: ['Song', 'Athletics', 'Music', 'Nature', 'Dance', 'Sex', 'Debate', 'Fighting', 'Food', 'Reading', 'Wine']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Fur',
+        table: ['Scorched', 'Cropped', 'Shaved', 'Scarred', 'Curly', 'Disheveled', 'Trimmed', 'Wavy', 'Painted', 'Limp', 'Shaggy']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Attire',
+        table: ['Sunbaked attire', 'Veiled garb', 'Thorny garb', 'Sodden linens', 'Hunter’s leathers', 'Fur-lined robes', 'Scout’s leathers', 'Mossy attire', 'Gatherer’s garb', 'Bark jacket', 'See-through robes']
       },
     ]
   },
   {
     name:'Khelb',
     description: '<p>A tribe of elfin, ethereal folk with luminous, indigo skin and white hair and eyes. Khelb culture and society is greatly focused on divination and predetermination, particularly with omens related to the phases of moons.</p>',
-    names: ['', '', '', '', '', '', '', '', '', '', ''],
+    names: ['Nyima', 'Seostris', 'Mylasi', 'Ahmet', 'Gunsem', 'Melech', 'Hazir', 'Hetep', 'Edmos', 'Semra', 'Sekhem'],
     tables: [
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birth Moon',
+        table: ['Witch moon', 'Waning crescent', 'Waning crescent', 'Waxing crescent', 'Waxing crescent', 'Waning gibbous', 'Waning gibbous', 'Waxing gibbous', 'Waxing gibbous', 'New moon', 'New moon']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birthplace',
+        table: ['The Crystalline Spires of Archech', 'Urukkhet, the City of Steps', 'The Moon-Soaked Kingdom', 'Boreal Thule', 'The Cedar Forest', 'Urur, Where The Walls Fell', 'The Stony Peaks of Evah', 'Upon the banks of the River Gyoll', 'The Gardens of Nergal', 'A Hyperborean Taiga', 'The Desolate Halls of Dis']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Distinction',
+        table: ['Sapphire eyes', 'Sensuous gait', 'Second pair of eyes', 'Silver brand', 'Runic tattoos', 'Missing limb', 'Black eyes', 'Silver tongue', 'Pronged antlers', 'Heavy jewellry', 'Wolf’s smile']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Frame',
+        table: ['Disfigured', 'Gaunt', 'Ancient', 'Soft', 'Stout', 'Steely', 'Delicate', 'Willowy', 'Sprightly', 'Tiny', 'Athletic']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birth Omen',
+        table: ['Raven', 'Storm', 'Owl', 'Comet', 'Wolf', 'Drought', 'Eagle', 'Eclipse', 'Hart', 'Flood', 'Hawk']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Skin',
+        table: ['Turquoise', 'Emerald', 'Bronze', 'Orange', 'Smoke', 'Gold', 'White', 'Silver', 'Black', 'Ochre', 'Azure']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Attire',
+        table: ['Jewelled garb', 'Indecent array', 'Flowing ensemble', 'Eccentric garb', 'Wispy attire', 'Patched robes', 'Expensive costume', 'Ancient finery', 'Fisher’s waders', 'Dancer’s regalia', 'Herder’s robes']
       },
     ]
   },
   {
     name:'Huon',
     description: '<p>A race of swift-running humanoids with short, ruddy fur and antelope-like horns. Huon have wide-set, expressive eyes and speak with a trilling, lyrical lilt.</p>',
-    names: ['', '', '', '', '', '', '', '', '', '', ''],
+    names: ['Aram', 'Sabah', 'Samiha', 'Wakim', 'Matar', 'Ereba', 'Oqotur', 'Sureia', 'Tanit', 'Ullakh', 'Lisir'],
     tables: [
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Voice',
+        table: ['Bass', 'Baritone', 'Baritone', 'Tenor', 'Tenor', 'Contralto', 'Contralto', 'Mezzo-soprano', 'Mezzo-soprano', 'Soprano', 'Soprano']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birthplace',
+        table: ['The Steppes of Kisho', 'Inah, the Great Green Ocean', 'Upon the banks of the River Gyoll', 'Pastoral Arish', 'The Jungles of Unnan', 'Shi’Hadith, the Golden City', 'The Serpent Valley', 'Urukkhet, the City of Steps', 'The Jungles of Unnan', 'A Hyperborean Taiga', 'The Red Plains of Alech']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Distinction',
+        table: ['White fur', 'Second pair of eyes', 'Tinkling bangles', 'Tattooed sigils', 'Silver pelt', 'Moonstone torc', 'Missing limb', 'Clan-brand', 'Ethereal voice', 'Brass legs', 'Midnight eyes']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Frame',
+        table: ['Willowy', 'Soft', 'Venerable', 'Plump', 'Towering', 'Tired', 'Statuesque', 'Ample', 'Slender', 'Vigorous', 'Flabby']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Horns',
+        table: ['Shorn', 'Stunted', 'Curled', 'Overgrown', 'Twisted', 'Heavy', 'Rough', 'Delicate', 'Shimmering', 'Scarred', 'Etched']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Fur',
+        table: ['Painted', 'Oily', 'Trimmed', 'Bristly', 'Shaggy', 'Frizzy', 'Scarred', 'Greasy', 'Scorched', 'Cropped', 'Shaved']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Attire',
+        table: ['Runner’s leathers', 'Revealing robes', 'Drover’s robes', 'Warrior’s leathers', 'Singer’s livery', 'Elegant finery', 'Hunter’s garb', 'Fashionable ensemble', 'Flowing garb', 'Gardener’s garb', 'Eccentric costume']
       },
     ]
   },
   {
     name:'Asuran',
-    description: '<p>One of the ten tribes of humans, the most numerous of the Gods’ mortal creations. Asurans trend toward stoutness and typically have russet or terra cotta skin tones. Asuran culture places great reverence on tattoos, and the story of one\'s life is often inscribed on their bodies for all to see.</p>',
-    names: ['', '', '', '', '', '', '', '', '', '', ''],
+    description: '<p>One of the ten tribes of humans, the most numerous of the Gods’ mortal creations. Asurans trend toward stoutness and typically have russet or terra cotta skin tones. Asuran culture places great reverence on tattoos, and the story of one’s life is often inscribed on their bodies for all to see.</p>',
+    names: ['Hermia', 'Sadiya', 'Nuriya', 'Izdihar', 'Asiria', 'Ricce', 'Akhil', 'Ibrahim', 'Zohra', 'Rashura', 'Irad'],
     tables: [
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Strata',
+        table: ['Priesthood', 'Farmer', 'Farmer', 'Builder', 'Builder', 'Scholar', 'Scholar', 'Warrior', 'Warrior', 'Satrapy', 'Satrapy']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birthplace',
+        table: ['A Hyperborean Taiga', 'The Great Swamp of Akkash', 'Zun Rüt', 'Pastoral Arish', 'The Red Plains of Alech', 'Urur, Where The Walls Fell', 'Boreal Thule', 'The Steppes of Kisho', 'The River Gyoll', 'Urukkhet, the City of Steps', 'Hyrriah’s Crag']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Distinction',
+        table: ['Second pair of eyes', 'Dancing step', 'Missing limb', 'Thin moustache', 'Clone brand', 'High voice', 'Potbelly laugh', 'Oiled skin', 'Calloused palms', 'Honeyed voice', 'Ritual scars']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Frame',
+        table: ['Slim', 'Disfigured', 'Steely', 'Tired', 'Sturdy', 'Grizzled', 'Muscular', 'Bandaged', 'Brawny', 'Active', 'Round']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Hair',
+        table: ['Straightened', 'Black', 'Cropped', 'Braided', 'Silver', 'Ponytail', 'Filthy', 'Red', 'Bangs', 'Long', 'Brown']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Tattoos',
+        table: ['Half-finished', 'Geometric', 'Brilliant colors', 'Full-body', 'Heavy shading', 'Stick-and-poke', 'Black linework', 'Glowing', 'Neo-traditional', 'Branded', 'Botanicals']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Attire',
+        table: ['Sacred vestments', 'Expensive finery', 'Ritual robes', 'Girded loins', 'Farmer’s garb', 'Artisan robes', 'Laborer’s garb', 'Gladiator leathers', 'Scholarly robes', 'Diaphanous silks', 'Warrior’s leather']
       },
     ]
   },
   {
     name:'Zin',
     description: '<p>Stout, smooth-skinned amphibioids resembling bullfrogs. Zin have mottled, slightly slimy skin of dunnish brown or muddy green, and communicate with a series of throaty undulations. They are known to be much quicker than they appear capable of.</p>',
-    names: ['', '', '', '', '', '', '', '', '', '', ''],
+    names: ['Ajani', 'Rayingri', 'Vectra', 'Malol', 'Inanna', 'Jatar', 'Zesmeni', 'Svarog', 'Dashyin', 'Ophis', 'Nalyssa'],
     tables: [
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Colors',
+        table: ['Black and tan', 'Beige', 'Beige', 'Black and blue', 'Black and blue', 'Rainbow', 'Rainbow', 'Black and green', 'Black and green', 'Black and orange', 'Black and orange']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birthplace',
+        table: ['The Great Swamp of Akkash', 'The Jungles of Unnan', 'Nyvia’s Breath', 'The Desolate Halls of Dis', 'Upon the banks of the River Gyoll', 'The Stormy Coast of Harre', 'The Cedar Forest', 'Pastoral Arish', 'Lost Seleuc', 'The Gardens of Nergal', 'Urukkhet, the City of Steps']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Distinction',
+        table: ['Inflated throat-sac', 'Second pair of eyes', 'Catfish whiskers', 'Glassy eyes', 'Bog breath', 'Prehensile tongue', 'Rotund belly', 'Missing limb', 'Sticky fingers', 'Layer of slime', 'Reed prosthetic']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Frame',
+        table: ['Angular', 'Soft', 'Hoary', 'Willowy', 'Starved', 'Plump', 'Hunched', 'Athletic', 'Delicate', 'Underdeveloped', 'Ample']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Face',
+        table: ['Pinched', 'Friendly', 'Tired', 'Wrinkled', 'Scarred', 'Ashen', 'Covered', 'Honest', 'Weathered', 'Warm', 'Flawless']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Skin',
+        table: ['Warty', 'Scar', 'Pulpy', 'Sallow', 'Thin', 'Painted', 'Thick', 'Pale', 'Slick', 'Birthmark', 'Slimy']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Attire',
+        table: ['Swamp waders', 'Wispy veils', 'Jungle attire', 'Laborer’s garb', 'Nomad’s regalia', 'Expensive ensemble', 'Delver’s garb', 'Scavenger’s rags', 'Sailor’s livery', 'Merchant garb', 'Herder’s finery']
       },
     ]
   },
