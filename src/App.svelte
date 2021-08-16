@@ -54,12 +54,22 @@
 		{/each}
 	</dl>
 
-	<h2>Vocation: {traveler.vocations}</h2>
+	<h2>Vocation: {traveler.vocations.join(', ')}</h2>
+
+	<h2>Extras: {traveler.extra}</h2>
 
 	<h2>Possessions</h2>
 	<dl>
 		<dt>Black glass</dt>
 		<dd>{traveler.blackGlass}G</dd>
+		<dt>Inventory slots</dt>
+		<dd>{traveler.inventory.slots}</dd>
+		<dt>Gear bubbles</dt>
+		<dd>{traveler.inventory.gearBubbles}</dd>
+		<dt>Weapons</dt>
+		<dd>{traveler.inventory.weapons}</dd>
+		<dt>Armor</dt>
+		<dd>{traveler.inventory.armor}</dd>
 	</dl>
 </main>
 
