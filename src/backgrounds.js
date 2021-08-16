@@ -422,35 +422,35 @@ export const backgrounds = [
   {
     name:'Jyn',
     description: '<p>A tribe of flame-blooded fire sprites. Jyn have copper- colored, luminous skin and yellow-orange hair and eyes. They are a wild and passionate people, regarded as excellent storytellers, singers and performers.</p>',
-    names: ['', '', '', '', '', '', '', '', '', '', ''],
+    names: ['Nadia', 'Sadik', 'Ageko', 'Mahmut', 'Horoh', 'Ashok', 'Rina', 'Khlaiun', 'Phaistos', 'Nergui', 'Khemais'],
     tables: [
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Hue',
+        table: ['Emerald', 'Lapis', 'Amethyst', 'Midnight', 'Citrine', 'Sapphire', 'Ruby', 'Pyrite', 'Pearl', 'Diamond', 'Jet']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Birthplace',
+        table: ['The Red Plains of Alech', 'Zarhym', 'The Crystalline Spires of Archech', 'Khur-Alad', 'The Stony Peaks of Evah', 'Urukkhet, the City of Steps', 'The Umber Wastes', 'Zun Rüt', 'The Bone Dunes', 'Shi’Hadith, the Golden City', 'The Moon-Soaked Kingdom']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Distinction',
+        table: ['Fiery eyes', 'Scorched breath', 'Missing limb', 'Bronze teeth', 'Glowing nails', 'Brass tongue', 'Cinnabar ringlets', 'Second pair of eyes', 'Forked tongue', 'Molten beard', 'Smoking nostrils']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Frame',
+        table: ['Willowy', 'Round', 'Slim', 'Scarred', 'Short', 'Grizzled', 'Delicate', 'Ample', 'Sprightly', 'Soft', 'Brawny']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Talent',
+        table: ['Percussion', 'Flute', 'Singing', 'Lute', 'Bell', 'Harp', 'Dance', 'Lyre', 'Storytelling', 'Mimicry', 'Shouting']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Hair',
+        table: ['Black', 'Shaven', 'Braided', 'Red', 'Topknot', 'Silver', 'Limp', 'Silky', 'White', 'Luxurious', 'Brown']
       },
       {
-        title: '',
-        table: ['', '', '', '', '', '', '', '', '', '', '']
+        title: 'Attire',
+        table: ['Beaded dress', 'Soldier’s tunic', 'Veiled garb', 'Ceremonial shawls', 'Wispy robes', 'Nomadic garb', 'Jewelled ensemble', 'Revealing robes', 'Flamboyant costume', 'Pugilist leathers', 'Diaphanous robes']
       },
     ]
   },
