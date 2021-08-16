@@ -9,87 +9,117 @@
 	}
 </script>
 
-<main>
-	<h1>{traveler.name}</h1>
-	<p></p>
+<main class="container">
+	<div class="row">
+		<header class="column">
+			<h1>{traveler.name}</h1>
+		</header>
+	</div>
 
-	<h2>Stats</h2>
-	<dl>
-		<dt>Silver</dt><dd>{traveler.attributes.silver}</dd>
-		<dt>Salt</dt><dd>{traveler.attributes.salt}</dd>
-		<dt>Iron</dt><dd>{traveler.attributes.iron}</dd>
-	</dl>
+	<div class="row">
+		<section class="column">
+			<table>
+				<tr><th>Silver</th><td>{traveler.attributes.silver}</td></tr>
+				<tr><th>Salt</th><td>{traveler.attributes.salt}</td></tr>
+				<tr><th>Iron</th><td>{traveler.attributes.iron}</td></tr>
+			</table>
+		</section>
 
-	<h2>Archetype: {traveler.archetype}</h2>
-	<label>
-		<input type=radio bind:group={traveler.archetype} value={'Sword'}>
-		Sword
-	</label>
-	<label>
-		<input type=radio bind:group={traveler.archetype} value={'Sorcerer'}>
-		Sorcerer
-	</label>
-	<dl>
-		<dt>Level</dt>
-		<dd>{traveler.level}</dd>
-		<dt>XP</dt>
-		<dd>{traveler.xp}</dd>
-		<dt>Will</dt>
-		<dd>{traveler.will}</dd>
-		<dt>Stamina</dt>
-		<dd>{traveler.stamina}</dd>
-	</dl>
+		<section class="column">
+			<table>
+				<tr><th>Level</th><td>{traveler.level}</td></tr>
+				<tr><th>XP</th><td>{traveler.xp}</td></tr>
+				<tr><th>Will</th><td>{traveler.will}</td></tr>
+				<tr><th>Stamina</th><td>{traveler.stamina}</td></tr>
+			</table>
+		</section>
 
-	<h2>Background</h2>
-	<label>
-		<select bind:value={traveler.background}>
-			{#each backgrounds as background}
-				<option value={background}>
-					{background.name}
-				</option>
-			{/each}
-		</select>
-	</label>
-	{#if traveler.background != null}{@html traveler.background.description}{/if}
+		<section class="column">
+			<table>
+				<tr>
+					<th>Archetype</th>
+					<td>
+						<label>
+							<input type=radio bind:group={traveler.archetype} value={'Sword'}>
+							Sword
+						</label>
+						<label>
+							<input type=radio bind:group={traveler.archetype} value={'Sorcerer'}>
+							Sorcerer
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th>Vocation</th><td>{traveler.vocations.join(', ')}</td>
+				</tr>
+				<tr>
+					<th>Extras</th><td>{traveler.extra}</td>
+				</tr>
+			</table>
+		</section>
+	</div>
 
-	<h2>Description</h2>
-	<dl>
-		{#each traveler.description as { title, value } }
-			<dt>{title}</dt>
-			<dd>{value}</dd>
-		{/each}
-	</dl>
-
-	<h2>Vocation: {traveler.vocations.join(', ')}</h2>
-
-	<h2>Extras: {traveler.extra}</h2>
-
-	<h2>Possessions</h2>
-	<dl>
-		<dt>Black glass</dt>
-		<dd>{traveler.blackGlass}G</dd>
-		<dt>Inventory slots</dt>
-		<dd>{traveler.inventory.slots}</dd>
-		<dt>Gear bubbles</dt>
-		<dd>{traveler.inventory.gearBubbles}</dd>
-		<dt>Weapons</dt>
-		<dd>
-			<ul>
-				{#each traveler.inventory.weapons as { description, type } }
-					<li>{description} <small>{type}</small></li>
+	<div class="row">
+		<section class="column">
+			<h2>Background</h2>
+			<label>
+				<select bind:value={traveler.background}>
+					{#each backgrounds as background}
+						<option value={background}>
+							{background.name}
+						</option>
+					{/each}
+				</select>
+			</label>
+			{#if traveler.background != null}{@html traveler.background.description}{/if}
+			<table>
+				{#each traveler.description as { title, value } }
+				<tr><th>{title}</th>
+					<td>{value}</td></tr>
 				{/each}
-			</ul>
-		</dd>
-		<dt>Armor</dt>
-		<dd>
-			<ul>
-				{#each traveler.inventory.armor as { description, type } }
-					<li>{description} <small>{type}</small></li>
-				{/each}
-			</ul>
-		</dd>
-	</dl>
+			</table>
+		</section>
+
+		<section class="column">
+			<h2>Possessions</h2>
+			 <table>
+				<tr><th>Black glass</th>
+				<td>{traveler.blackGlass}G</td></tr>
+				<tr><th>Inventory slots</th>
+				<td>{traveler.inventory.slots}</td></tr>
+				<tr><th>Gear bubbles</th>
+				<td>{traveler.inventory.gearBubbles}</td></tr>
+				<tr><th>Weapons</th>
+				<td>
+					<ul>
+						{#each traveler.inventory.weapons as { description, type } }
+							<li>{description} <small>{type}</small></li>
+						{/each}
+					</ul>
+				</td></tr>
+				<tr><th>Armor</th>
+				<td>
+					<ul>
+						{#each traveler.inventory.armor as { description, type } }
+							<li>{description} <small>{type}</small></li>
+						{/each}
+					</ul>
+				</td></tr>
+			 </table>			
+		</section>
+	</div>
+	
 </main>
 
 <style>
+	th {
+		text-align: right;
+		vertical-align: text-top;
+	}
+
+	label {
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+	}
 </style>
