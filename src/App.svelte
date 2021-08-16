@@ -1,6 +1,12 @@
 <script>
 	export let traveler;
 	export let backgrounds;
+
+	// TODO: these should only trigger when the relevant property changes
+	$: {
+		traveler.applyArchetype();
+		traveler.applyBackground();
+	}
 </script>
 
 <main>
@@ -67,9 +73,19 @@
 		<dt>Gear bubbles</dt>
 		<dd>{traveler.inventory.gearBubbles}</dd>
 		<dt>Weapons</dt>
-		<dd>{traveler.inventory.weapons}</dd>
+		<dd>
+			<ul>
+			{#each traveler.inventory.weapons as { description, type } }
+				<li>{description} <small>{type}</small></li>
+			{/each}
+			</ul>
+		</dd>
 		<dt>Armor</dt>
-		<dd>{traveler.inventory.armor}</dd>
+		<ul>
+			{#each traveler.inventory.armor as { description, type } }
+				<li>{description} <small>{type}</small></li>
+			{/each}
+			</ul>
 	</dl>
 </main>
 
