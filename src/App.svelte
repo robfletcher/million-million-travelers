@@ -124,6 +124,25 @@
 </main>
 
 <style>
+	main {
+		background-color: rgba(240, 240, 221, 1);
+	}
+
+	header {
+		background-color: #fbdd15;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	header h1 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-family: 'Uncial Antiqua', cursive;
+		font-size: 6rem;
+		font-variant: small-caps;
+		line-height: 1;
+	}
+
 	th {
 		text-align: right;
 		vertical-align: text-top;
