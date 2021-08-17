@@ -17,12 +17,19 @@
 	</div>
 
 	<div class="row">
-		<section class="column">
-			<table>
-				<tr><th>Silver</th><td>{traveler.attributes.silver}</td></tr>
-				<tr><th>Salt</th><td>{traveler.attributes.salt}</td></tr>
-				<tr><th>Iron</th><td>{traveler.attributes.iron}</td></tr>
-			</table>
+		<section id="attributes" class="column">
+			<figure>
+				<figcaption>Silver</figcaption>
+				<span class="value">{traveler.attributes.silver}</span>
+			</figure>
+			<figure>
+				<figcaption>Salt</figcaption>
+				<span class="value">{traveler.attributes.salt}</span>
+			</figure>
+			<figure>
+				<figcaption>Iron</figcaption>
+				<span class="value">{traveler.attributes.iron}</span>
+			</figure>
 		</section>
 
 		<section class="column">
@@ -49,12 +56,11 @@
 						</label>
 					</td>
 				</tr>
+				{#if traveler.archetype === 'Sorcerer'}
 				<tr>
-					<th>Vocation</th><td>{traveler.vocations.join(', ')}</td>
+					<th>Words of Creation</th><td>{traveler.words.join(', ')}</td>
 				</tr>
-				<tr>
-					<th>Complication</th><td>{traveler.complication}</td>
-				</tr>
+				{/if}
 				<tr>
 					<th>Extras</th><td>{traveler.extra}</td>
 				</tr>
@@ -80,6 +86,12 @@
 				<tr><th>{title}</th>
 					<td>{value}</td></tr>
 				{/each}
+				<tr>
+					<th>Vocation</th><td>{traveler.vocations.join(', ')}</td>
+				</tr>
+				<tr>
+					<th>Complication</th><td>{traveler.complication}</td>
+				</tr>
 			</table>
 		</section>
 
@@ -88,7 +100,7 @@
 			 <table>
 				<tr><th>Black glass</th><td>{traveler.blackGlass}G</td></tr>
 				<tr><th>Inventory slots</th><td>{traveler.usedSlots()}/{traveler.inventory.slots}</td></tr>
-				<tr><th>Gear bubbles</th><td>{traveler.inventory.gearBubbles}</td></tr>
+				<tr><th>Gear</th><td>{traveler.inventory.gearBubbles}</td></tr>
 				{#each traveler.inventory.weapons as { description, type }, i }
 				<tr>
 					{#if i === 0}
@@ -156,5 +168,39 @@
 		display: inline-block;
 		vertical-align: middle;
 		cursor: pointer;
+	}
+
+	#attributes {
+		align-items: start;
+	}
+
+	figure {
+		margin: 0 0 1rem;
+		background-color: #222;
+		color: #fff;
+		text-align: right;
+		padding: 1rem;
+		border-radius: 0 5rem 5rem 0;
+	}
+
+	figure figcaption, figure .value {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	figure figcaption {
+		font-variant: small-caps;
+		writing-mode: sideways-lr;
+	}
+
+	figure .value {
+		background-color: rgba(240, 240, 221, 1);
+		color: #222;
+		height: 6rem;
+		width: 6rem;
+		border-radius: 50%;
+		line-height: 6rem;
+		font-size: 3.5rem;
+		text-align: center;
 	}
 </style>

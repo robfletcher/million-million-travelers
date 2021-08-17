@@ -6,6 +6,7 @@ export const roll = (n = 1, sides = 6) => {
   return sum;
 };
 
+export const roll1d2 = () => roll(1, 2);
 export const roll1d3 = () => roll(1, 3);
 export const roll1d6 = () => roll(1, 6);
 export const roll2d6 = () => roll(2, 6);

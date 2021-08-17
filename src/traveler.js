@@ -6,6 +6,7 @@ import { randomWeapon } from './weapons';
 import { randomItem } from './belongings';
 import { randomGift } from './gifts';
 import { randomComplication } from './complications';
+import { randomWord } from './words';
 
 export class Traveler {
   constructor() {
@@ -34,6 +35,7 @@ export class Traveler {
     };
     this.extra = table1D6(this.#extras)();
     this.complication = randomComplication();
+    this.words = [];
   };
 
   #extras = [
@@ -71,10 +73,12 @@ export class Traveler {
       this.will = 5;
       this.stamina = 6;
       this.inventory.weapons = [randomWeapon(), randomWeapon()];
+      this.words = [];
     } else {
       this.will = 4;
       this.stamina = 6;
       this.inventory.weapons = [randomWeapon()];
+      this.words = [randomWord(), randomWord(), randomWord()];
     }
     this.inventory.armor = [randomArmor()];
   };
