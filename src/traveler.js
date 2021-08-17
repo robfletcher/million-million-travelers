@@ -1,4 +1,4 @@
-import { roll1d3, roll3d6, roll3d6dropLowest, table1D6, table2D6, tableD20, tableD66 } from './dice';
+import { roll1d2, roll1d3, roll3d6, roll3d6dropLowest, table1D6, table2D6, tableD20, tableD66 } from './dice';
 import { backgrounds } from './backgrounds';
 import { vocations } from './vocations';
 import { randomArmor } from './armor';
@@ -18,7 +18,7 @@ export class Traveler {
       salt: roll3d6dropLowest(),
       iron: roll3d6dropLowest()
     };
-    this.archetype = 'Sword';
+    this.archetype = roll1d2() == 1 ? 'Sword' : 'Sorcerer';
     this.level = 1;
     this.xp = 0;
     this.will = 0;
