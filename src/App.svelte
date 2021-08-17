@@ -1,4 +1,6 @@
 <script>
+import { get_all_dirty_from_scope } from "svelte/internal";
+
 	export let traveler;
 	export let backgrounds;
 
@@ -11,7 +13,7 @@
 
 <main class="container">
 	<div class="row">
-		<header class="column">
+		<header id="traveler-name" class="column">
 			<h1>{traveler.name}</h1>
 		</header>
 	</div>
@@ -56,11 +58,6 @@
 						</label>
 					</td>
 				</tr>
-				{#if traveler.archetype === 'Sorcerer'}
-				<tr>
-					<th>Words of Creation</th><td>{traveler.words.join(', ')}</td>
-				</tr>
-				{/if}
 				<tr>
 					<th>Extras</th><td>{traveler.extra}</td>
 				</tr>
@@ -96,40 +93,33 @@
 		</section>
 
 		<section class="column">
-			<h2>Belongings</h2>
-			 <table>
-				<tr><th>Black glass</th><td>{traveler.blackGlass}G</td></tr>
-				<tr><th>Inventory slots</th><td>{traveler.usedSlots()}/{traveler.inventory.slots}</td></tr>
-				<tr><th>Gear</th><td>{traveler.inventory.gearBubbles}</td></tr>
+			<header>
+				<h2>Inventory</h2>
+				<span class="inventory-slots">{#each [...Array(traveler.inventory.slots).keys()] as i}{#if i < traveler.usedSlots()}&#11045;{:else}&#11046;{/if}{/each}</span>
+			</header>
+			<ul>
+				<li>{traveler.blackGlass}G Black Glass</li>
+				<li><strong>Gear</strong><span class="gear-bubbles">{#each [...Array(traveler.inventory.gearBubbles).keys()] as i}&bigcirc;{/each}</span></li>
 				{#each traveler.inventory.weapons as { description, type }, i }
-				<tr>
-					{#if i === 0}
-					<th rowspan={traveler.inventory.weapons.length}>Weapons</th>
-					{/if}
-					<td class="spanned">{description} <small>{type}</small></td>
-				</tr>
+				<li><strong>{description}</strong><br><small>{type}</small></li>
 				{/each}
 				{#each traveler.inventory.armor as { description, type }, i }
-				<tr>
-					{#if i === 0}
-					<th rowspan={traveler.inventory.armor.length}>Armor</th>
-					{/if}
-					<td class="spanned">{description} <small>{type}</small></td>
-				</tr>
+				<li><strong>{description}</strong><br><small>{type}</small></li>
 				{/each}
 				{#each traveler.inventory.belongings as { description }, i }
-				<tr>
-					{#if i === 0}
-					<th rowspan={traveler.inventory.belongings.length}>Belongings</th>
-					{/if}
-					<td class="spanned">{description}</td>
-				</tr>
+				<li>{description}</li>
 				{/each}
-				<tr>
-					<th>Gift</th>
-					<td>{@html traveler.inventory.gift}</td>
-				</tr>
-			 </table>			
+				<li><strong>{traveler.inventory.gift.name}</strong><br><small>{@html traveler.inventory.gift.description}</small></li>
+			</ul>
+
+			{#if traveler.archetype === 'Sorcerer'}
+			<h2>Words of Creation</h2>
+			<ul>
+				{#each traveler.words as word}
+				<li>{word}</li>
+				{/each}
+			</ul>
+			{/if}
 		</section>
 	</div>
 	
@@ -140,7 +130,7 @@
 		background-color: rgba(240, 240, 221, 1);
 	}
 
-	header {
+	#traveler-name {
 		background-color: #fbdd15;
 		margin-top: 1rem;
 		margin-bottom: 2rem;
@@ -153,6 +143,21 @@
 		font-size: 6rem;
 		font-variant: small-caps;
 		line-height: 1;
+	}
+
+	section > header {
+		display: flex;
+		align-items: center;
+		margin-bottom: 2rem;
+	}
+
+	header h2 {
+		margin: 0;
+	}
+
+	ul {
+		list-style: disc outside;
+		padding: 0 1.5em;
 	}
 
 	th {
@@ -202,5 +207,23 @@
 		line-height: 6rem;
 		font-size: 3.5rem;
 		text-align: center;
+	}
+
+	.inventory-slots {
+		margin-left: 2rem;
+		font-size: 2rem;
+	}
+
+	.gear-bubbles {
+		margin-left: 1rem;
+		font-size: 2rem;
+		display: inline-block;
+		vertical-align: baseline;
+	}
+
+	@media (min-width: 769px) {
+		.inventory-slots {
+			font-size: 2.8rem;
+		}
 	}
 </style>
