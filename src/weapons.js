@@ -106,11 +106,18 @@ const weapons = {
   ]
 };
 
-export const randomWeapon = () => {
-  const weapon = tableD20(weapons.types);
-  return {
-    description: tableD20(weapons.aspects) + ' ' + weapon.form,
-    type: weapon.type,
-    slots: weapon.slots
-  };
+export const randomWeapons = (n) => {
+  const items = [];
+  while (items.length < n) {
+    const item = tableD20(weapons.types);
+    if (!items.map(it => it.form).includes(item.form)) {
+      items.push({
+        aspect: tableD20(weapons.aspects),
+        form: item.form,
+        type: item.type,
+        slots: item.slots
+      });
+    }
+  }
+  return items;
 };

@@ -2,11 +2,11 @@ import { roll1d2, roll1d3, roll3d6, roll3d6dropLowest, table1D6, table2D6, table
 import { backgrounds } from './backgrounds';
 import { vocations } from './vocations';
 import { randomArmor } from './armor';
-import { randomWeapon } from './weapons';
-import { randomItem } from './belongings';
+import { randomWeapons } from './weapons';
+import { randomItems } from './belongings';
 import { randomGift } from './gifts';
 import { randomComplication } from './complications';
-import { randomWord } from './words';
+import { randomWords } from './words';
 
 export class Traveler {
   constructor() {
@@ -30,7 +30,7 @@ export class Traveler {
       gearBubbles: 5,
       weapons: [],
       armor: [],
-      belongings: [randomItem(), randomItem(), randomItem()],
+      belongings: randomItems(3),
       gift: randomGift()
     };
     this.extra = table1D6(this.#extras)();
@@ -72,13 +72,13 @@ export class Traveler {
     if (this.archetype === 'Sword') {
       this.will = 5;
       this.stamina = 6;
-      this.inventory.weapons = [randomWeapon(), randomWeapon()];
+      this.inventory.weapons = randomWeapons(2);
       this.words = [];
     } else {
       this.will = 4;
       this.stamina = 6;
-      this.inventory.weapons = [randomWeapon()];
-      this.words = [randomWord(), randomWord(), randomWord()];
+      this.inventory.weapons = randomWeapons(1);
+      this.words = randomWords(3);
     }
     this.inventory.armor = [randomArmor()];
   };

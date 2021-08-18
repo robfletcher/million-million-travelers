@@ -159,4 +159,10 @@ const belongings = [
   ]
 ];
 
-export const randomItem = () => tableD66(belongings);
+export const randomItems = (n) => {
+  const items = new Set();
+  while (items.size < n) {
+    items.add(tableD66(belongings));
+  }
+  return [...items];
+};

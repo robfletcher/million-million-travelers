@@ -18,10 +18,21 @@ const shapes = [
   ['Purifying', 'Scrying', 'Soothing', 'Twisting', 'Warding', 'Withering']
 ];
 
-export const randomWord = () => {
+const randomWord = () => {
   if (roll1d2() == 1) {
     return tableD66(forms);
   } else {
     return tableD66(shapes);
   }
+};
+
+export const randomWords = (n) => {
+  const items = [];
+  while (items.length < n) {
+    const item = randomWord();
+    if (!items.includes(item)) {
+      items.push(item);
+    }
+  }
+  return items;
 };

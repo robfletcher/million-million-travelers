@@ -100,8 +100,8 @@ import { get_all_dirty_from_scope } from "svelte/internal";
 			<ul>
 				<li>{traveler.blackGlass}G Black Glass</li>
 				<li><strong>Gear</strong><span class="gear-bubbles">{#each [...Array(traveler.inventory.gearBubbles).keys()] as i}&bigcirc;{/each}</span></li>
-				{#each traveler.inventory.weapons as { description, type }, i }
-				<li><strong>{description}</strong><br><small>{type}</small></li>
+				{#each traveler.inventory.weapons as { aspect, form, type }, i }
+				<li><strong>{aspect} {form}</strong><br><small>{type}</small></li>
 				{/each}
 				{#each traveler.inventory.armor as { description, type }, i }
 				<li><strong>{description}</strong><br><small>{type}</small></li>
