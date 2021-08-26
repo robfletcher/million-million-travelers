@@ -1,6 +1,4 @@
 <script>
-import { get_all_dirty_from_scope } from "svelte/internal";
-
 	export let traveler;
 	export let backgrounds;
 
@@ -13,19 +11,17 @@ import { get_all_dirty_from_scope } from "svelte/internal";
 
 <main class="container">
 	<header>
-		<div class="row">
-			<h1 class="column">{traveler.name}</h1>
-		</div>
+		<h1>{traveler.name}</h1>
 
-		<section id="about" class="row">
-			<div class="column">Archetype: 
+		<section id="about">
+			<p>Archetype: 
 				<label><input type=radio bind:group={traveler.archetype} value={'Sword'}>Sword</label>
 				<label><input type=radio bind:group={traveler.archetype} value={'Sorcerer'}>Sorcerer</label>
-			</div>
-			<div class="column"><p>Level: {traveler.level}</p></div>
-			<div class="column"><p>Vocation: {traveler.vocations.join(', ')}</p></div>
-			<div class="column"><p>{traveler.complication}</p></div>
-			<div class="column"><p>Extra: {traveler.extra}</p></div>
+			</p>
+			<p>Level: {traveler.level}</p>
+			<p>Vocation: {traveler.vocations.join(', ')}</p>
+			<p>{traveler.complication}</p>
+			<p>Extra: {traveler.extra}</p>
 		</section>
 	</header>
 
@@ -86,7 +82,6 @@ import { get_all_dirty_from_scope } from "svelte/internal";
 				</header>
 				<ul>
 					<li>{traveler.blackGlass}G Black Glass</li>
-					<li><strong>Gear</strong><span class="gear-bubbles">{#each [...Array(traveler.inventory.gearBubbles).keys()] as i}&bigcirc;{/each}</span></li>
 					{#each traveler.inventory.weapons as { aspect, form, type }, i }
 					<li><strong>{aspect} {form}</strong><br><small>{type}</small></li>
 					{/each}
@@ -97,6 +92,7 @@ import { get_all_dirty_from_scope } from "svelte/internal";
 					<li>{description}</li>
 					{/each}
 					<li><strong>{traveler.inventory.gift.name}</strong><br><small>{@html traveler.inventory.gift.description}</small></li>
+					<li><strong>Gear</strong><span class="gear-bubbles">{#each [...Array(traveler.inventory.gearBubbles).keys()] as i}&bigcirc;{/each}</span></li>
 				</ul>
 			</section>
 
@@ -118,12 +114,120 @@ import { get_all_dirty_from_scope } from "svelte/internal";
 <style>
 	main {
 		background-color: rgba(240, 240, 221, 1);
+		padding-bottom: 3rem;
 	}
 
-	main > header h1 {
+	main > header {
+		padding: 0 1rem;
+	}
+
+	main header h1, main header h1::before, main header h1::after {
 		background-color: #fbdd15;
-		margin-top: 1rem;
+	}
+	
+	main header h1 {
 		margin-bottom: 2rem;
+		position: relative;
+	}
+
+	main header h1::before, main header h1::after {
+		position: absolute;
+		content: '\00A0';
+		width: 3rem;
+	}
+
+	main header h1::before {
+		left: -3rem;
+	}
+
+	main header h1::after {
+		right: -3rem;
+	}
+
+	@media (min-width: 1025px) {
+		main > header {
+			padding-top: 0.5rem;
+		}
+
+		main header h1 {
+			margin-top: 1rem;
+		}
+
+		main header h1::before, main header h1::after {
+			width: 4.5rem;
+		}
+
+		main header h1::before {
+			left: -4.5rem;
+		}
+
+		main header h1::after {
+			right: -4.5rem;
+		}
+	}
+
+	section {
+		position: relative;
+		border-bottom: 1px solid #222;
+	}
+
+	@media (min-width: 769px) {
+		section {
+			padding: 0 2rem;
+		}
+	}
+
+	section::after {
+		content: '\1321D';
+		position: absolute;
+		left: 50%;
+		bottom: -1.5rem;
+		background-color: rgb(240, 240, 221);
+		line-height: 1;
+		padding: 0.5rem;
+		font-size: 2rem;
+		transform: translateX(-50%);
+	}
+
+	#about p {
+		margin-bottom: 1rem;
+	}
+
+	#about p:last-child {
+		margin-bottom: 2.5rem;
+	}
+
+	@media (min-width: 768px) {
+		#about {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: baseline;
+		}
+
+		#about p {
+			margin: 0 1rem 2.5rem;
+			text-align: center;
+		}
+	}
+
+	#about::after {
+		content: '\13000';
+	}
+
+	#attributes::after {
+		content: '\131A3';
+	}
+
+	#background::after {
+		content: '\1329D';
+	}
+
+	#inventory::after {
+		content: '\130A1';
+	}
+
+	#words::after {
+		content: '\13080';
 	}
 
 	header h1 {
@@ -138,16 +242,11 @@ import { get_all_dirty_from_scope } from "svelte/internal";
 	section > header {
 		display: flex;
 		align-items: center;
-		margin-bottom: 2rem;
 	}
 
 	h2 {
 		font-size: 3.2rem;
-		margin-bottom: 1rem;
-	}
-
-	header h2 {
-		margin: 0;
+		margin: 1.5rem 0 1rem;
 	}
 
 	ul {
@@ -165,29 +264,33 @@ import { get_all_dirty_from_scope } from "svelte/internal";
 		vertical-align: text-top;
 	}
 
-	h2, th, figcaption {
+	th::after {
+		content: ':';
+	}
+
+	h2, figcaption {
 		font-variant: small-caps;
 	}
 
 	label {
-		display: inline-block;
-		vertical-align: middle;
+		display: inline;
 		cursor: pointer;
-	}
-
-	#about .column {
-		display: flex;
-		align-items: baseline;
-		justify-content: center;
-	}
-
-	#about .column > * {
+		margin-left: 0.5rem;
+		margin-bottom: 0;
 		white-space: nowrap;
+	}
+
+	input {
+		margin-bottom: 0;
 	}
 
 	.stats {
 		display: flex;
 		align-items: center;
+	}
+
+	.stats:last-child {
+		margin-bottom: 2.5rem;
 	}
 
 	figure.stat {
@@ -209,7 +312,23 @@ import { get_all_dirty_from_scope } from "svelte/internal";
 	}
 
 	figure.stat-large figcaption {
-		font-size: 2.4rem;
+		font-size: 1.8rem;
+		writing-mode: sideways-lr;
+	}
+
+	figure.stat-large .value {
+		margin-left: 0;
+	}
+
+	@media (min-width: 768px) {
+		figure.stat-large figcaption {
+			font-size: 2.4rem;
+			writing-mode: inherit;
+		}
+
+		figure.stat-large .value {
+			margin-left: 1rem;
+		}
 	}
 
 	figure.stat-large .value {
