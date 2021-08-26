@@ -29,13 +29,16 @@ export class Traveler {
       slots: 10,
       gearBubbles: 5,
       weapons: [],
-      armor: [],
+      armor: [randomArmor()],
       belongings: randomItems(3),
       gift: randomGift()
     };
     this.extra = table1D6(this.#extras)();
     this.complication = randomComplication();
     this.words = [];
+
+    this.applyBackground(this.background);
+    this.applyArchetype(this.archetype);
   };
 
   #extras = [
@@ -80,7 +83,6 @@ export class Traveler {
       this.inventory.weapons = randomWeapons(1);
       this.words = randomWords(3);
     }
-    this.inventory.armor = [randomArmor()];
   };
 
   applyBackground = () => {

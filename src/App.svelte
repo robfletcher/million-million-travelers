@@ -1,12 +1,5 @@
 <script>
 	export let traveler;
-	export let backgrounds;
-
-	// TODO: these should only trigger when the relevant property changes
-	$: {
-		traveler.applyArchetype();
-		traveler.applyBackground();
-	}
 </script>
 
 <main class="container">
@@ -14,11 +7,7 @@
 		<h1>{traveler.name}</h1>
 
 		<section id="about">
-			<p>Archetype: 
-				<label><input type=radio bind:group={traveler.archetype} value={'Sword'}>Sword</label>
-				<label><input type=radio bind:group={traveler.archetype} value={'Sorcerer'}>Sorcerer</label>
-			</p>
-			<p>Level: {traveler.level}</p>
+			<p>Archetype: {traveler.archetype}</p>
 			<p>Vocation: {traveler.vocations.join(', ')}</p>
 			<p>{traveler.complication}</p>
 			<p>Extra: {traveler.extra}</p>
@@ -44,6 +33,9 @@
 					</figure>
 				</div>
 				<div class="stats">
+					<figure id="level" class="stat">
+						<figcaption>Level</figcaption><span class="value">{traveler.level}</span>
+					</figure>
 					<figure id="will" class="stat">
 						<figcaption>Will</figcaption><span class="value">{traveler.will}</span>
 					</figure>
@@ -55,16 +47,8 @@
 
 			<section id="background">
 				<h2>Background</h2>
-				<label>
-					<select bind:value={traveler.background}>
-						{#each backgrounds as background}
-							<option value={background}>
-								{background.name}
-							</option>
-						{/each}
-					</select>
-				</label>
-				{#if traveler.background != null}{@html traveler.background.description}{/if}
+				<h3>{traveler.background.name}</h3>
+				{@html traveler.background.description}
 				<table>
 					{#each traveler.description as { title, value } }
 					<tr><th>{title}</th>
@@ -126,7 +110,9 @@
 	}
 	
 	main header h1 {
-		margin-bottom: 2rem;
+		margin: 0 0 2rem;
+		font-family: 'Caesar Dressing', cursive;
+		font-size: 6rem;
 		position: relative;
 	}
 
@@ -168,7 +154,7 @@
 
 	section {
 		position: relative;
-		border-bottom: 1px solid #222;
+		border-bottom: 2px dotted #222;
 	}
 
 	@media (min-width: 769px) {
@@ -181,12 +167,12 @@
 		content: '\1321D';
 		position: absolute;
 		left: 50%;
-		bottom: -1.5rem;
+		bottom: 0;
 		background-color: rgb(240, 240, 221);
 		line-height: 1;
 		padding: 0.5rem;
 		font-size: 2rem;
-		transform: translateX(-50%);
+		transform: translateX(-50%) translateY(50%);
 	}
 
 	#about p {
@@ -228,15 +214,6 @@
 
 	#words::after {
 		content: '\13080';
-	}
-
-	header h1 {
-		margin-top: 0;
-		margin-bottom: 0;
-		font-family: 'Uncial Antiqua', cursive;
-		font-size: 6rem;
-		font-variant: small-caps;
-		line-height: 1;
 	}
 
 	section > header {
@@ -301,19 +278,18 @@
 		flex-grow: 1;
 	}
 
-	figure.stat figcaption {
-		font-size: 2rem;
-	}
-
 	figure.stat .value {
 		font-size: 3.5rem;
 		line-height: 1;
 		margin-left: 1rem;
 	}
 
+	figure.stat figcaption {
+		writing-mode: sideways-lr;
+	}
+
 	figure.stat-large figcaption {
 		font-size: 1.8rem;
-		writing-mode: sideways-lr;
 	}
 
 	figure.stat-large .value {
@@ -321,6 +297,11 @@
 	}
 
 	@media (min-width: 768px) {
+		figure.stat figcaption {
+			font-size: 2rem;
+			writing-mode: inherit;
+		}
+
 		figure.stat-large figcaption {
 			font-size: 2.4rem;
 			writing-mode: inherit;
