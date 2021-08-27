@@ -2,6 +2,10 @@
 	export let traveler;
 </script>
 
+<header class="meta">
+	<p>A traveler generator for the <a href="https://monkeys-paw-games.itch.io/unconquered-free-artless-edition">Unconquered</a> RPG by <a href="https://monkeyspawgames.com/">Monkey's Paw Games</a></p>
+</header>
+
 <main class="container">
 	<header>
 		<h1>{traveler.name}</h1>
@@ -75,8 +79,14 @@
 					{#each traveler.inventory.belongings as { description }, i }
 					<li>{description}</li>
 					{/each}
+					<li class="gear gear-{traveler.inventory.gearBubbles}"><strong>Gear</strong></li>
+				</ul>
+			</section>
+
+			<section id="gift">
+				<h2>Gift</h2>
+				<ul>
 					<li><strong>{traveler.inventory.gift.name}</strong><br><small>{@html traveler.inventory.gift.description}</small></li>
-					<li><strong>Gear</strong><span class="gear-bubbles">{#each [...Array(traveler.inventory.gearBubbles).keys()] as i}&bigcirc;{/each}</span></li>
 				</ul>
 			</section>
 
@@ -95,7 +105,30 @@
 	
 </main>
 
+<footer class="meta"><p><em>Unconquered</em> is &copy; Monkey's Paw Games. This web-app is an independent production by <a href="https://twitter.com/_fletchr">Rob Fletcher</a> and is not affiliated with Monkey's Paw Games.</p></footer>
+
 <style>
+	.meta {
+		text-align: center;
+	}
+
+	.meta {
+		margin-top: 1rem;
+	}
+
+	.meta p {
+		margin-bottom: 1rem;
+	}
+
+	.meta a {
+		color: #222;
+		text-decoration: underline;
+	}
+
+	.meta a:hover, .meta a:active {
+		color: #be0116;
+	}
+
 	main {
 		background-color: rgba(240, 240, 221, 1);
 		padding-bottom: 3rem;
@@ -154,7 +187,7 @@
 
 	section {
 		position: relative;
-		border-bottom: 2px dotted #222;
+		border-bottom: 2px dotted #be0116;
 	}
 
 	@media (min-width: 769px) {
@@ -165,6 +198,7 @@
 
 	section::after {
 		content: '\1321D';
+		color: #be0116;
 		position: absolute;
 		left: 50%;
 		bottom: 0;
@@ -212,6 +246,10 @@
 		content: '\130A1';
 	}
 
+	#gift::after {
+		content: '\13144';
+	}
+
 	#words::after {
 		content: '\13080';
 	}
@@ -224,6 +262,10 @@
 	h2 {
 		font-size: 3.2rem;
 		margin: 1.5rem 0 1rem;
+	}
+
+	h3 {
+		margin-bottom: 1rem;
 	}
 
 	ul {
@@ -247,18 +289,6 @@
 
 	h2, figcaption {
 		font-variant: small-caps;
-	}
-
-	label {
-		display: inline;
-		cursor: pointer;
-		margin-left: 0.5rem;
-		margin-bottom: 0;
-		white-space: nowrap;
-	}
-
-	input {
-		margin-bottom: 0;
 	}
 
 	.stats {
@@ -319,6 +349,19 @@
 	.inventory-slots {
 		margin-left: 2rem;
 		font-size: 2rem;
+	}
+
+	.gear::after {
+		margin-left: 1rem;
+		vertical-align: top;
+	}
+
+	.gear-5::after {
+		content: '\0025EF\0025EF\0025EF\0025EF\0025EF';
+	}
+
+	.gear-6::after {
+		content: '\0025EF\0025EF\0025EF\0025EF\0025EF\0025EF';
 	}
 
 	.gear-bubbles {
