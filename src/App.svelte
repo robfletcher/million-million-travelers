@@ -87,9 +87,7 @@
 
 			<section id="gift">
 				<h2>Gift</h2>
-				<ul>
-					<li><strong>{traveler.inventory.gift.name}</strong><br><small>{@html traveler.inventory.gift.description}</small></li>
-				</ul>
+				<p><strong>{traveler.inventory.gift.name}</strong><br><small>{@html traveler.inventory.gift.description}</small></p>
 			</section>
 
 			{#if traveler.archetype === 'Sorcerer'}
