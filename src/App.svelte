@@ -1,5 +1,6 @@
 <script>
 	export let traveler;
+	const overburden = traveler.usedSlots() - traveler.inventory.slots;
 </script>
 
 <header class="meta">
@@ -67,6 +68,7 @@
 				<header>
 					<h2>Inventory</h2>
 					<span class="inventory-slots">{#each [...Array(traveler.inventory.slots).keys()] as i}{#if i < traveler.usedSlots()}&#11045;{:else}&#11046;{/if}{/each}</span>
+					{#if overburden > 0}<span class="inventory-slots overburden">{#each [...Array(overburden).keys()] as i}&#11045;{/each}</span>{/if}
 				</header>
 				<ul>
 					<li>{traveler.blackGlass}G Black Glass</li>
@@ -347,8 +349,15 @@
 	}
 
 	.inventory-slots {
-		margin-left: 2rem;
 		font-size: 2rem;
+	}
+
+	.inventory-slots:first-of-type {
+		margin-left: 2rem;
+	}
+
+	.overburden {
+		color: #be0116;
 	}
 
 	.gear::after {
