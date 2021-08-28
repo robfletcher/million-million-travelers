@@ -344,11 +344,13 @@
 		figure.stat figcaption {
 			font-size: 2rem;
 			writing-mode: inherit;
+			transform: none;
 		}
 
 		figure.stat-large figcaption {
 			font-size: 2.4rem;
 			writing-mode: inherit;
+			transform: none;
 		}
 
 		figure.stat-large .value {
