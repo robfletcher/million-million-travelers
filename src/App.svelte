@@ -109,6 +109,13 @@
 <footer class="meta"><p><em>Unconquered</em> is &copy; Monkey's Paw Games. This web-app is an independent production by <a href="https://twitter.com/_fletchr">Rob Fletcher</a> and is not affiliated with Monkey's Paw Games.</p></footer>
 
 <style>
+	/** Milligram starts column layout at 40rem which is too small */
+	@media(max-width: 45rem) {
+		.row {
+			flex-direction: column;
+		}
+	}
+
 	.meta {
 		text-align: center;
 	}
@@ -174,7 +181,7 @@
 		right: -3rem;
 	}
 
-	@media (min-width: 1025px) {
+	@media (min-width: 80rem) {
 		main > header {
 			padding-top: 0.5rem;
 		}
@@ -201,7 +208,7 @@
 		border-bottom: 2px dotted #be0116;
 	}
 
-	@media (min-width: 769px) {
+	@media (min-width: 80rem) {
 		section {
 			padding: 0 2rem;
 		}
@@ -228,7 +235,7 @@
 		margin-bottom: 2.5rem;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 80rem) {
 		#about {
 			display: flex;
 			justify-content: space-evenly;
@@ -340,7 +347,7 @@
 		margin-left: 0;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 40rem) {
 		figure.stat figcaption {
 			font-size: 2rem;
 			writing-mode: inherit;
@@ -394,7 +401,7 @@
 		vertical-align: baseline;
 	}
 
-	@media (min-width: 769px) {
+	@media (min-width: 80rem) {
 		.inventory-slots {
 			font-size: 2.8rem;
 		}
