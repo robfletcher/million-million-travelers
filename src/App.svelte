@@ -124,6 +124,7 @@
 		color: transparent;
 		background-image: linear-gradient(#4f91be, #8e0039);
 		background-clip: text;
+		line-height: 1;
 	}
 
 	.meta p {
@@ -326,7 +327,9 @@
 	}
 
 	figure.stat figcaption {
-		writing-mode: sideways-lr;
+		/* Only Firefox actually supports writing-mode: sideways-lr so simulating by rotating vertical text */
+		writing-mode: vertical-lr;
+		transform: rotate(180deg);
 	}
 
 	figure.stat-large figcaption {
