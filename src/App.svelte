@@ -265,6 +265,7 @@
 	}
 
 	h3 {
+		font-size: 2.2rem;
 		margin-bottom: 1rem;
 	}
 
