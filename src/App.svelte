@@ -4,7 +4,8 @@
 </script>
 
 <header class="meta">
-	<p>A traveler generator for the <a href="https://monkeys-paw-games.itch.io/unconquered-free-artless-edition">Unconquered</a> RPG by <a href="https://monkeyspawgames.com/">Monkey's Paw Games</a></p>
+	<h1>A Million Million Travelers</h1>
+	<p>A character generator for the <a href="https://monkeys-paw-games.itch.io/unconquered-free-artless-edition">Unconquered</a> RPG by <a href="https://monkeyspawgames.com/">Monkey's Paw Games</a></p>
 </header>
 
 <main class="container">
@@ -116,6 +117,15 @@
 		margin-top: 1rem;
 	}
 
+	.meta h1 {
+		font-family: 'Amarante', cursive;
+		font-variant: small-caps;
+		margin: 0;
+		color: transparent;
+		background-image: linear-gradient(#4f91be, #8e0039);
+		background-clip: text;
+	}
+
 	.meta p {
 		margin-bottom: 1rem;
 	}
@@ -126,7 +136,7 @@
 	}
 
 	.meta a:hover, .meta a:active {
-		color: #be0116;
+		color: #8e0039;
 	}
 
 	main {
