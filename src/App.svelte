@@ -131,6 +131,7 @@
 		color: transparent;
 		background-image: linear-gradient(#4f91be, #8e0039);
 		background-clip: text;
+		-webkit-background-clip: text;
 		line-height: 1;
 	}
 
