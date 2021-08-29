@@ -66,11 +66,8 @@
 
 		<div class="column">
 			<section id="inventory">
-				<header>
-					<h2>Inventory</h2>
-					<span class="inventory-slots">{#each [...Array(traveler.inventory.slots).keys()] as i}{#if i < traveler.usedSlots()}&#11045;{:else}&#11046;{/if}{/each}</span>
-					{#if overburden > 0}<span class="inventory-slots overburden">{#each [...Array(overburden).keys()] as i}&#11045;{/each}</span>{/if}
-				</header>
+				<h2>Inventory</h2>
+				<div class="inventory-slots">{#each [...Array(traveler.inventory.slots).keys()] as i}{#if i < traveler.usedSlots()}&#11045;{:else}&#11046;{/if}{/each}{#if overburden > 0}<span class="overburden">{#each [...Array(overburden).keys()] as i}&#11045;{/each}</span>{/if}</div>
 				<ul>
 					<li>{traveler.blackGlass}G Black Glass</li>
 					{#each traveler.inventory.weapons as { aspect, form, type }, i }
@@ -273,11 +270,6 @@
 		content: '\13080';
 	}
 
-	section > header {
-		display: flex;
-		align-items: center;
-	}
-
 	h2 {
 		font-size: 3.2rem;
 		margin: 1.5rem 0 1rem;
@@ -366,13 +358,10 @@
 		font-size: 5.25rem;
 	}
 
-	.inventory-slots:first-of-type {
-		margin-left: 1rem;
-	}
-
 	.inventory-slots {
 		font-family: sans-serif;
-		letter-spacing: 0;
+		margin-bottom: 1rem;
+		line-height: 1;
 	}
 
 	.overburden {
