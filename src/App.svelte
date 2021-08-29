@@ -235,7 +235,7 @@
 		margin-bottom: 2.5rem;
 	}
 
-	@media (min-width: 80rem) {
+	@media (min-width: 45rem) {
 		#about {
 			display: flex;
 			justify-content: space-evenly;
@@ -323,14 +323,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: 0 0 1rem;
+		margin: 0 1rem 1rem;
 		flex-grow: 1;
 	}
 
 	figure.stat .value {
 		font-size: 3.5rem;
 		line-height: 1;
-		margin-left: 1rem;
+		margin-left: 0;
 	}
 
 	figure.stat figcaption {
@@ -341,10 +341,6 @@
 
 	figure.stat-large figcaption {
 		font-size: 1.8rem;
-	}
-
-	figure.stat-large .value {
-		margin-left: 0;
 	}
 
 	@media (min-width: 40rem) {
@@ -360,8 +356,8 @@
 			transform: none;
 		}
 
-		figure.stat-large .value {
-			margin-left: 1rem;
+		figure.stat .value {
+			margin-left: 0.5rem;
 		}
 	}
 
@@ -369,12 +365,13 @@
 		font-size: 5.25rem;
 	}
 
-	.inventory-slots {
-		font-size: 2rem;
+	.inventory-slots:first-of-type {
+		margin-left: 1rem;
 	}
 
-	.inventory-slots:first-of-type {
-		margin-left: 2rem;
+	.inventory-slots {
+		font-family: sans-serif;
+		letter-spacing: 0;
 	}
 
 	.overburden {
@@ -399,6 +396,12 @@
 		font-size: 2rem;
 		display: inline-block;
 		vertical-align: baseline;
+	}
+
+	@media (min-width: 40rem) {
+		.inventory-slots {
+			font-size: 2rem;
+		}
 	}
 
 	@media (min-width: 80rem) {
