@@ -155,10 +155,6 @@
 		padding-bottom: 3rem;
 	}
 
-	main > header {
-		padding: 0 1rem;
-	}
-
 	main header h1, main header h1::before, main header h1::after {
 		background-color: #fbdd15;
 	}
@@ -173,15 +169,15 @@
 	main header h1::before, main header h1::after {
 		position: absolute;
 		content: '\00A0';
-		width: 3rem;
+		width: 2rem;
 	}
 
 	main header h1::before {
-		left: -3rem;
+		left: -2rem;
 	}
 
 	main header h1::after {
-		right: -3rem;
+		right: -2rem;
 	}
 
 	@media (min-width: 80rem) {
