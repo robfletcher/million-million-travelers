@@ -90,7 +90,7 @@
 			<section id="gift">
 				<h2>Gift</h2>
 				<h3>{traveler.inventory.gift.name}</h3>
-				<p>{@html traveler.inventory.gift.description}</p>
+				{@html traveler.inventory.gift.description}
 			</section>
 
 			{#if traveler.words.length > 0}
@@ -237,7 +237,7 @@
 		margin-top: 1.5rem;
 	}
 
-	:global(p:last-of-type) {
+	:global(p:last-child) {
 		margin-bottom: 2.5rem;
 	}
 
