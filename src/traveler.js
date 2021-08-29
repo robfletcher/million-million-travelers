@@ -97,6 +97,9 @@ export class Traveler {
   usedSlots = () => {
     const mapper = (it) => it.slots
     const reducer = (a, b) => a + b;
-    return this.inventory.weapons.map(mapper).reduce(reducer) + this.inventory.armor.map(mapper).reduce(reducer) + this.inventory.belongings.map(mapper).reduce(reducer);
+    return this.inventory.weapons.map(mapper).reduce(reducer) 
+         + this.inventory.armor.map(mapper).reduce(reducer) 
+         + this.inventory.belongings.map(mapper).reduce(reducer)
+         + this.words.length;
   }
 }
