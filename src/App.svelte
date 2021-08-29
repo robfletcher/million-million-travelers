@@ -287,6 +287,7 @@
 	}
 
 	h2 {
+		font-family: 'Amarante', cursive;
 		font-size: 3.2rem;
 		margin: 1.5rem 0 1rem;
 	}
