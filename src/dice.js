@@ -18,6 +18,7 @@ export const roll3d6dropLowest = () => {
 };
 export const roll1d20 = () => roll(1, 20);
 
+export const tableD2 = (table) => table[roll1d2() - 1];
 export const table1D6 = (table) => table[roll1d6() - 1];
 export const table2D6 = (table) => table[roll2d6() - 2];
 export const tableD66 = (table) => table[roll1d6() - 1][roll1d6() - 1];

@@ -13,7 +13,7 @@
 		<h1>{traveler.name}</h1>
 
 		<section id="about">
-			<p>Archetype: {traveler.archetype}</p>
+			<p>Archetype: {traveler.archetype.name}</p>
 			<p>Vocation: {traveler.vocations.join(', ')}</p>
 			<p>{traveler.complication}</p>
 			<p>Extra: {traveler.extra}</p>
@@ -51,6 +51,12 @@
 				</div>
 			</section>
 
+			<section id="archetype" class={traveler.archetype.name.toLowerCase()}>
+				<h2>Archetype</h2>
+				<h3>{traveler.archetype.name}</h3>
+				{@html traveler.archetype.description}
+			</section>
+
 			<section id="background">
 				<h2>Background</h2>
 				<h3>{traveler.background.name}</h3>
@@ -85,10 +91,11 @@
 
 			<section id="gift">
 				<h2>Gift</h2>
-				<p><strong>{traveler.inventory.gift.name}</strong><br><small>{@html traveler.inventory.gift.description}</small></p>
+				<h3>{traveler.inventory.gift.name}</h3>
+				<p>{@html traveler.inventory.gift.description}</p>
 			</section>
 
-			{#if traveler.archetype === 'Sorcerer'}
+			{#if traveler.words.length > 0}
 			<section id="words">
 				<h2>Words of Creation</h2>
 				<ul>
@@ -225,11 +232,11 @@
 		transform: translateX(-50%) translateY(50%);
 	}
 
-	#about p {
+	:global(p) {
 		margin-bottom: 1rem;
 	}
 
-	#about p:last-child {
+	:global(p:last-of-type) {
 		margin-bottom: 2.5rem;
 	}
 
@@ -252,6 +259,14 @@
 
 	#attributes::after {
 		content: '\131A3';
+	}
+
+	#archetype::after {
+		content: '\1300E';
+	}
+
+	#archetype.sorcerer::after {
+		content: '\1301B';
 	}
 
 	#background::after {

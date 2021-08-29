@@ -7,6 +7,7 @@ import { randomItems } from './belongings';
 import { randomGift } from './gifts';
 import { randomComplication } from './complications';
 import { randomWords } from './words';
+import { randomArchetype } from './archetypes';
 
 export class Traveler {
   constructor() {
@@ -18,7 +19,7 @@ export class Traveler {
       salt: roll3d6dropLowest(),
       iron: roll3d6dropLowest()
     };
-    this.archetype = roll1d2() == 1 ? 'Sword' : 'Sorcerer';
+    this.archetype = randomArchetype();
     this.level = 1;
     this.xp = 0;
     this.will = 0;
@@ -72,17 +73,10 @@ export class Traveler {
   ];
 
   applyArchetype = () => {
-    if (this.archetype === 'Sword') {
-      this.will = 5;
-      this.stamina = 6;
-      this.inventory.weapons = randomWeapons(2);
-      this.words = [];
-    } else {
-      this.will = 4;
-      this.stamina = 6;
-      this.inventory.weapons = randomWeapons(1);
-      this.words = randomWords(3);
-    }
+    this.will = this.archetype.will;
+    this.stamina = this.archetype.stamina;
+    this.inventory.weapons = randomWeapons(this.archetype.weapons);
+    this.words = randomWords(this.archetype.words);
   };
 
   applyBackground = () => {
