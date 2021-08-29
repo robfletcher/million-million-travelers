@@ -22,6 +22,10 @@
 
 	<div class="row">
 		<div class="column">
+			<section id="archetype" class={traveler.archetype.name.toLowerCase()}>
+				{@html traveler.archetype.description}
+			</section>
+
 			<section id="attributes">
 				<h2>Attributes</h2>
 				<div class="stats">
@@ -49,12 +53,6 @@
 						<figcaption>Stamina</figcaption><span class="value">{traveler.stamina}</span>
 					</figure>
 				</div>
-			</section>
-
-			<section id="archetype" class={traveler.archetype.name.toLowerCase()}>
-				<h2>Archetype</h2>
-				<h3>{traveler.archetype.name}</h3>
-				{@html traveler.archetype.description}
 			</section>
 
 			<section id="background">
@@ -188,11 +186,12 @@
 
 	@media (min-width: 80rem) {
 		main > header {
-			padding-top: 0.5rem;
+			padding: 0.5rem 0 0;
 		}
 
 		main header h1 {
 			margin-top: 1rem;
+			padding: 0 1rem;
 		}
 
 		main header h1::before, main header h1::after {
@@ -234,6 +233,10 @@
 
 	:global(p) {
 		margin-bottom: 1rem;
+	}
+
+	:global(p:first-child) {
+		margin-top: 1.5rem;
 	}
 
 	:global(p:last-of-type) {
