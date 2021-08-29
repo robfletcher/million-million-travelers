@@ -161,7 +161,8 @@
 	
 	main header h1 {
 		margin: 0 0 2rem;
-		font-family: 'Caesar Dressing', cursive;
+		font-family: 'Amarante', cursive;
+		font-variant: small-caps;
 		font-size: 6rem;
 		position: relative;
 	}
@@ -188,6 +189,7 @@
 		main header h1 {
 			margin-top: 1rem;
 			padding: 0 1rem;
+			line-height: 1;
 		}
 
 		main header h1::before, main header h1::after {
