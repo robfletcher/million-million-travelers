@@ -108,7 +108,10 @@
 	
 </main>
 
-<footer class="meta"><p><em>Unconquered</em> is &copy; Monkey's Paw Games. This web-app is an independent production by <a href="https://twitter.com/_fletchr">Rob Fletcher</a> and is not affiliated with Monkey's Paw Games.</p></footer>
+<footer class="meta">
+	<p><em>Unconquered</em> is &copy; Monkey's Paw Games. This web-app is an independent production by <a href="https://twitter.com/_fletchr">Rob Fletcher</a> and is not affiliated with Monkey's Paw Games.</p>
+	<p>Source code is available on <a href="https://github.com/robfletcher/million-million-travelers">GitHub</a></p>
+</footer>
 
 <style>
 	/** Milligram starts column layout at 40rem which is too small */
