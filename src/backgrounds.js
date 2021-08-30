@@ -421,7 +421,7 @@ export const backgrounds = [
   },
   {
     name:'Jyn',
-    description: '<p>A tribe of flame-blooded fire sprites. Jyn have copper- colored, luminous skin and yellow-orange hair and eyes. They are a wild and passionate people, regarded as excellent storytellers, singers and performers.</p>',
+    description: '<p>A tribe of flame-blooded fire sprites. Jyn have copper-colored, luminous skin and yellow-orange hair and eyes. They are a wild and passionate people, regarded as excellent storytellers, singers and performers.</p>',
     names: ['Nadia', 'Sadik', 'Ageko', 'Mahmut', 'Horoh', 'Ashok', 'Rina', 'Khlaiun', 'Phaistos', 'Nergui', 'Khemais'],
     tables: [
       {
@@ -491,7 +491,7 @@ export const backgrounds = [
   },
   {
     name:'Kainji',
-    description: '<p>One of the ten tribes of humans, the most numerous of the Gods’ mortal creations. Kainji are, on average, barrel- chested and broad-shouldered, with skin tones ranging from umber to ochre to a deep indigo. Hair is a status symbol among Kainji culture, and many Kainji seek greater status - or at least the appearance of such - with elaborate braids or plaits in their dark, coiled hair.</p>',
+    description: '<p>One of the ten tribes of humans, the most numerous of the Gods’ mortal creations. Kainji are, on average, barrel-chested and broad-shouldered, with skin tones ranging from umber to ochre to a deep indigo. Hair is a status symbol among Kainji culture, and many Kainji seek greater status - or at least the appearance of such - with elaborate braids or plaits in their dark, coiled hair.</p>',
     names: ['Lai Lian', 'Zatorus', 'Malak', 'Korlus', 'Guruji', 'Intar’sei', 'Hamid', 'Navlaan', 'Sunil', 'Ereden', 'Arrae'],
     tables: [
       {
