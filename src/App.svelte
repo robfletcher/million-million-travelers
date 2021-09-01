@@ -1,6 +1,7 @@
 <script>
-	export let traveler;
-	const overburden = traveler.usedSlots() - traveler.inventory.slots;
+	import { newTraveler, traveler } from "./store"
+
+	const overburden = $traveler.usedSlots() - $traveler.inventory.slots;
 </script>
 
 <header class="meta">
@@ -10,20 +11,22 @@
 
 <main class="container">
 	<header>
-		<h1>{traveler.name}</h1>
+		<h1>{$traveler.name}</h1>
 
 		<section id="about">
-			<p>Archetype: {traveler.archetype.name}</p>
-			<p>Vocation: {traveler.vocations.join(', ')}</p>
-			<p>{traveler.complication}</p>
-			<p>Extra: {traveler.extra}</p>
+			<p>Archetype: {$traveler.archetype.name}</p>
+			<p>Vocation: {$traveler.vocations.join(', ')}</p>
+			<p>{$traveler.complication}</p>
+			<p>Extra: {$traveler.extra}</p>
 		</section>
+
+		<button class="new" on:click={newTraveler}>Replace</button>
 	</header>
 
 	<div class="row">
 		<div class="column">
-			<section id="archetype" class={traveler.archetype.name.toLowerCase()}>
-				{@html traveler.archetype.description}
+			<section id="archetype" class={$traveler.archetype.name.toLowerCase()}>
+				{@html $traveler.archetype.description}
 			</section>
 
 			<section id="attributes">
@@ -31,36 +34,36 @@
 				<div class="stats">
 					<figure id="silver" class="stat stat-large">
 						<figcaption>Silver</figcaption>
-						<span class="value">{traveler.attributes.silver}</span>
+						<span class="value">{$traveler.attributes.silver}</span>
 					</figure>
 					<figure id="salt" class="stat stat-large">
 						<figcaption>Salt</figcaption>
-						<span class="value">{traveler.attributes.salt}</span>
+						<span class="value">{$traveler.attributes.salt}</span>
 					</figure>
 					<figure id="iron" class="stat stat-large">
 						<figcaption>Iron</figcaption>
-						<span class="value">{traveler.attributes.iron}</span>
+						<span class="value">{$traveler.attributes.iron}</span>
 					</figure>
 				</div>
 				<div class="stats">
 					<figure id="level" class="stat">
-						<figcaption>Level</figcaption><span class="value">{traveler.level}</span>
+						<figcaption>Level</figcaption><span class="value">{$traveler.level}</span>
 					</figure>
 					<figure id="will" class="stat">
-						<figcaption>Will</figcaption><span class="value">{traveler.will}</span>
+						<figcaption>Will</figcaption><span class="value">{$traveler.will}</span>
 					</figure>
 					<figure id="stamina" class="stat">
-						<figcaption>Stamina</figcaption><span class="value">{traveler.stamina}</span>
+						<figcaption>Stamina</figcaption><span class="value">{$traveler.stamina}</span>
 					</figure>
 				</div>
 			</section>
 
 			<section id="background">
 				<h2>Background</h2>
-				<h3>{traveler.background.name}</h3>
-				{@html traveler.background.description}
+				<h3>{$traveler.background.name}</h3>
+				{@html $traveler.background.description}
 				<table>
-					{#each traveler.description as { title, value } }
+					{#each $traveler.description as { title, value } }
 					<tr><th>{title}</th>
 						<td>{value}</td></tr>
 					{/each}
@@ -71,33 +74,33 @@
 		<div class="column">
 			<section id="inventory">
 				<h2>Inventory</h2>
-				<div class="inventory-slots">{#each [...Array(traveler.inventory.slots).keys()] as i}{#if i < traveler.usedSlots()}&#11045;{:else}&#11046;{/if}{/each}{#if overburden > 0}<span class="overburden">{#each [...Array(overburden).keys()] as i}&#11045;{/each}</span>{/if}</div>
+				<div class="inventory-slots">{#each [...Array($traveler.inventory.slots).keys()] as i}{#if i < $traveler.usedSlots()}&#11045;{:else}&#11046;{/if}{/each}{#if overburden > 0}<span class="overburden">{#each [...Array(overburden).keys()] as i}&#11045;{/each}</span>{/if}</div>
 				<ul>
-					<li>{traveler.blackGlass}G Black Glass</li>
-					{#each traveler.inventory.weapons as { aspect, form, type }, i }
+					<li>{$traveler.blackGlass}G Black Glass</li>
+					{#each $traveler.inventory.weapons as { aspect, form, type }, i }
 					<li><strong>{aspect} {form}</strong><br><small>{type}</small></li>
 					{/each}
-					{#each traveler.inventory.armor as { description, type }, i }
+					{#each $traveler.inventory.armor as { description, type }, i }
 					<li><strong>{description}</strong><br><small>{type}</small></li>
 					{/each}
-					{#each traveler.inventory.belongings as { description }, i }
+					{#each $traveler.inventory.belongings as { description }, i }
 					<li>{description}</li>
 					{/each}
-					<li class="gear gear-{traveler.inventory.gearBubbles}"><strong>Gear</strong></li>
+					<li class="gear gear-{$traveler.inventory.gearBubbles}"><strong>Gear</strong></li>
 				</ul>
 			</section>
 
 			<section id="gift">
 				<h2>Gift</h2>
-				<h3>{traveler.inventory.gift.name}</h3>
-				{@html traveler.inventory.gift.description}
+				<h3>{$traveler.inventory.gift.name}</h3>
+				{@html $traveler.inventory.gift.description}
 			</section>
 
-			{#if traveler.words.length > 0}
+			{#if $traveler.words.length > 0}
 			<section id="words">
 				<h2>Words of Creation</h2>
 				<ul>
-					{#each traveler.words as word}
+					{#each $traveler.words as word}
 					<li>{word}</li>
 					{/each}
 				</ul>
@@ -158,6 +161,10 @@
 		padding-bottom: 3rem;
 	}
 
+	main > header {
+		position: relative;
+	}
+
 	main header h1, main header h1::before, main header h1::after {
 		background-color: #fbdd15;
 	}
@@ -184,6 +191,12 @@
 		right: -2rem;
 	}
 
+	button.new {
+		position: absolute;
+		right: -0.25rem;
+		top: 1.75rem;
+	}
+
 	@media (min-width: 80rem) {
 		main > header {
 			padding: 0.5rem 0 0;
@@ -205,6 +218,11 @@
 
 		main header h1::after {
 			right: -4.5rem;
+		}
+
+		button.new {
+			right: -3.5rem;
+			top: 2.5rem;
 		}
 	}
 

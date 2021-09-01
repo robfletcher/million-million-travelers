@@ -96,4 +96,8 @@ export class Traveler {
          + this.inventory.belongings.map(mapper).reduce(reducer)
          + this.words.length;
   }
+
+  static from(json) {
+    return Object.assign(new Traveler(), json);
+  }
 }
