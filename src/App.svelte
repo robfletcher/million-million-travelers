@@ -262,15 +262,15 @@
 		}
 
 		main header h1::before, main header h1::after {
-			width: 4.5rem;
+			width: 3.5rem;
 		}
 
 		main header h1::before {
-			left: -4.5rem;
+			left: -3.5rem;
 		}
 
 		main header h1::after {
-			right: -4.5rem;
+			right: -3.5rem;
 		}
 	}
 
