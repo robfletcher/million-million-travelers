@@ -28,10 +28,6 @@
 
 	<div class="row">
 		<div class="column">
-			<section id="archetype" class={$traveler.archetype.name.toLowerCase()}>
-				{@html $traveler.archetype.description}
-			</section>
-
 			<section id="attributes">
 				<h2>Attributes</h2>
 				<div class="stats">
@@ -333,14 +329,6 @@
 
 	#attributes::after {
 		content: '\131A3';
-	}
-
-	#archetype::after {
-		content: '\1300E';
-	}
-
-	#archetype.sorcerer::after {
-		content: '\1301B';
 	}
 
 	#background::after {
