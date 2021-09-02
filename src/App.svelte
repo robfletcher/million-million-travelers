@@ -14,7 +14,7 @@
 	<p>Source code is available on <a href="https://github.com/robfletcher/million-million-travelers">GitHub</a></p>
 </footer>
 
-<style>
+<style lang="scss">
 	header, footer {
 		text-align: center;
 	}
@@ -23,19 +23,23 @@
 		margin-top: 1rem;
 		position: relative;
 		border-bottom: 2px dotted #222;
-	}
 
-	header::after {
-		content: '\130F7';
-		color: #222;
-		position: absolute;
-		left: 50%;
-		bottom: 0;
-		background-color: #f37767;
-		line-height: 1;
-		padding: 0.5rem;
-		font-size: 2rem;
-		transform: translateX(-50%) translateY(50%);
+		&::after {
+			content: '\130F7';
+			color: #222;
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			background-color: #f37767;
+			line-height: 1;
+			padding: 0.5rem;
+			font-size: 2rem;
+			transform: translateX(-50%) translateY(50%);
+		}
+
+		p {
+			margin-bottom: 2rem;
+		}
 	}
 
 	h1 {
@@ -47,16 +51,12 @@
 		line-height: 1;
 	}
 
-	header p {
-		margin-bottom: 2rem;
-	}
-
 	a {
 		color: #222;
 		text-decoration: underline;
-	}
 
-	a:hover, a:active {
-		color: #8e0039;
+		&:hover, &:active {
+			color: #8e0039;
+		}
 	}
 </style>

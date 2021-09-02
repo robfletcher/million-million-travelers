@@ -22,7 +22,7 @@
   </ul>
 </section>
 
-<style>
+<style lang="scss">
 	section::after {
 		content: '\1300B';
 	}
@@ -31,6 +31,14 @@
 		font-family: sans-serif;
 		margin-bottom: 1rem;
 		line-height: 1;
+
+		@media (min-width: 40rem) {
+			font-size: 2rem;
+		}
+
+		@media (min-width: 80rem) {
+			font-size: 2.8rem;
+		}
 	}
 
 	.overburden {
@@ -55,17 +63,5 @@
 		font-size: 2rem;
 		display: inline-block;
 		vertical-align: baseline;
-	}
-
-	@media (min-width: 40rem) {
-		.inventory-slots {
-			font-size: 2rem;
-		}
-	}
-
-	@media (min-width: 80rem) {
-		.inventory-slots {
-			font-size: 2.8rem;
-		}
 	}
 </style>

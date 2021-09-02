@@ -16,7 +16,7 @@
   </div>
 </section>
 
-<style>
+<style lang="scss">
   section::after {
 		content: '\131A3';
 	}
@@ -26,15 +26,21 @@
 		/* Only Firefox actually supports writing-mode: sideways-lr so simulating by rotating vertical text */
 		writing-mode: vertical-lr;
 		transform: rotate(180deg);
+
+		@media (min-width: 40rem) {
+			font-size: 2rem;
+			writing-mode: inherit;
+			transform: none;
+		}
 	}
 
 	.stats {
 		display: flex;
 		align-items: center;
-	}
 
-	.stats:last-child {
-		margin-bottom: 2.5rem;
+		&:last-child {
+			margin-bottom: 2.5rem;
+		}
 	}
 
 	figure {
@@ -43,37 +49,31 @@
 		justify-content: center;
 		margin: 0 1rem 1rem;
 		flex-grow: 1;
+
+		&.lg {
+			figcaption {
+				font-size: 1.8rem;
+
+				@media (min-width: 40rem) {
+					font-size: 2.4rem;
+					writing-mode: inherit;
+					transform: none;
+				}
+			}
+
+			.value {
+				font-size: 5.25rem;
+			}
+		}
 	}
 
 	.value {
 		font-size: 3.5rem;
 		line-height: 1;
 		margin-left: 0;
-	}
 
-	figure.lg figcaption {
-		font-size: 1.8rem;
-	}
-
-	@media (min-width: 40rem) {
-		figcaption {
-			font-size: 2rem;
-			writing-mode: inherit;
-			transform: none;
-		}
-
-		figure.lg figcaption {
-			font-size: 2.4rem;
-			writing-mode: inherit;
-			transform: none;
-		}
-
-		.value {
+		@media (min-width: 40rem) {
 			margin-left: 0.5rem;
 		}
-	}
-
-	figure.lg .value {
-		font-size: 5.25rem;
 	}
 </style>

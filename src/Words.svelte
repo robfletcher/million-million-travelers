@@ -13,7 +13,7 @@
 </section>
 {/if}
 
-<style>
+<style lang="scss">
 	section::after {
 		content: '\13080';
 	}

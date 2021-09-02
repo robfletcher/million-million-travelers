@@ -13,9 +13,12 @@
   </section>
 </header>
 
-<style>
+<style lang="scss">
 	header {
 		position: relative;
+		@media (min-width: 80rem) {
+			padding: 0.5rem 0 0;
+		}
 	}
 
 	h1, h1::before, h1::after {
@@ -25,43 +28,35 @@
 	h1 {
 		margin: 0 0 2rem;
 		font-size: 6rem;
-	}
 
-	h1::before, h1::after {
-		position: absolute;
-		content: '\00A0';
-		width: 2rem;
-	}
+		&::before, &::after {
+			position: absolute;
+			content: '\00A0';
+			width: 2rem;
 
-	h1::before {
-		left: -2rem;
-	}
-
-	h1::after {
-		right: -2rem;
-	}
-
-	@media (min-width: 80rem) {
-		header {
-			padding: 0.5rem 0 0;
+			@media (min-width: 80rem) {
+				width: 3.5rem;
+			}
 		}
 
-		h1 {
+		&::before {
+			left: -2rem;
+			@media (min-width: 80rem) {
+				left: -3.5rem;
+			}
+		}
+
+		&::after {
+			right: -2rem;
+			@media (min-width: 80rem) {
+				right: -3.5rem;
+			}
+		}
+
+		@media (min-width: 80rem) {
 			margin-top: 1rem;
 			padding: 0 1rem;
 			line-height: 1;
-		}
-
-		h1::before, h1::after {
-			width: 3.5rem;
-		}
-
-		h1::before {
-			left: -3.5rem;
-		}
-
-		h1::after {
-			right: -3.5rem;
 		}
 	}
 

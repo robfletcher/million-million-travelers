@@ -30,7 +30,7 @@
 	</div>
 </main>
 
-<style>
+<style lang="scss">
 	/** Milligram starts column layout at 40rem which is too small */
 	@media(max-width: 45rem) {
 		.row {
@@ -45,10 +45,10 @@
 
   nav {
 		text-align: center;
-	}
 
-	nav p {
-		margin-bottom: 1rem;
+		p {
+			margin-bottom: 1rem;
+		}
 	}
 
 	.buttons {
@@ -67,24 +67,24 @@
 		letter-spacing: normal;
 		height: auto;
 		padding: 0 2rem;
-	}
 
-	@media(min-width: 36rem) {
-		button::before, button::after {
-			display: inline-block;
-			font-size: 3rem;
-			vertical-align: middle;
-		}
+		@media(min-width: 36rem) {
+			&::before, &::after {
+				display: inline-block;
+				font-size: 3rem;
+				vertical-align: middle;
+			}
 
-		button.new-sword::before {
-			transform: translateY(0.4rem);
-			content: '\1300E\00a0';
-		}
+			&.new-sword::before {
+				transform: translateY(0.4rem);
+				content: '\1300E\00a0';
+			}
 
-		button.new-sorcerer::after {
-			transform: translateY(0.4rem) scale(-1, 1);
-			content: '\1301B\00a0';
-			font-size: 3.5rem;
+			&.new-sorcerer::after {
+				transform: translateY(0.4rem) scale(-1, 1);
+				content: '\1301B\00a0';
+				font-size: 3.5rem;
+			}
 		}
 	}
 </style>

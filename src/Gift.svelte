@@ -8,7 +8,7 @@
   {@html $traveler.inventory.gift.description}
 </section>
 
-<style>
+<style lang="scss">
 	section::after {
 		content: '\13144';
 	}

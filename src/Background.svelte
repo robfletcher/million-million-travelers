@@ -14,7 +14,7 @@
   </table>
 </section>
 
-<style>
+<style lang="scss">
 	section::after {
 		content: '\1329D';
 	}
@@ -27,9 +27,9 @@
 	th {
 		text-align: right;
 		vertical-align: text-top;
-	}
 
-	th::after {
-		content: ':';
+		&::after {
+			content: ':';
+		}
 	}
 </style>
