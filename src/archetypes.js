@@ -19,4 +19,6 @@ const archetypes = [
   }
 ];
 
+export const sword = archetypes[0];
+export const sorcerer = archetypes[1];
 export const randomArchetype = () => tableD2(archetypes);

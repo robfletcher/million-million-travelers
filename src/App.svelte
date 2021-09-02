@@ -1,13 +1,18 @@
 <script>
-	import { newTraveler, traveler } from "./store"
+	import { newSorcerer, newSword, newTraveler, traveler } from "./store"
 
 	const overburden = $traveler.usedSlots() - $traveler.inventory.slots;
 </script>
 
-<header class="meta">
+<header class="title container">
 	<h1>A Million Million Travelers</h1>
 	<p>A character generator for the <a href="https://monkeys-paw-games.itch.io/unconquered-free-artless-edition">Unconquered</a> RPG by <a href="https://monkeyspawgames.com/">Monkey's Paw Games</a></p>
 </header>
+
+<nav class="container">
+	<p>Generate a new random traveler by choosing an archetype:</p>
+	<p class="buttons"><button class="new-sword" on:click={newSword}>Sword</button> or <button class="new-sorcerer" on:click={newSorcerer}>Sorcerer</button></p>
+</nav>
 
 <main class="container">
 	<header>
@@ -19,8 +24,6 @@
 			<p>{$traveler.complication}</p>
 			<p>Extra: {$traveler.extra}</p>
 		</section>
-
-		<button class="new" on:click={newTraveler}>Replace</button>
 	</header>
 
 	<div class="row">
@@ -111,7 +114,7 @@
 	
 </main>
 
-<footer class="meta">
+<footer class="container meta">
 	<p><em>Unconquered</em> is &copy; Monkey's Paw Games. This web-app is an independent production by <a href="https://twitter.com/_fletchr">Rob Fletcher</a> and is not affiliated with Monkey's Paw Games.</p>
 	<p>Source code is available on <a href="https://github.com/robfletcher/million-million-travelers">GitHub</a></p>
 </footer>
@@ -124,15 +127,15 @@
 		}
 	}
 
-	.meta {
+	.title, nav, .meta {
 		text-align: center;
 	}
 
-	.meta {
+	.title {
 		margin-top: 1rem;
 	}
 
-	.meta h1 {
+	.title h1 {
 		font-family: 'Amarante', cursive;
 		font-variant: small-caps;
 		margin: 0;
@@ -143,17 +146,77 @@
 		line-height: 1;
 	}
 
-	.meta p {
-		margin-bottom: 1rem;
+	.title p {
+		margin-bottom: 2rem;
 	}
 
-	.meta a {
+	.title a, .meta a {
 		color: #222;
 		text-decoration: underline;
 	}
 
+	.title a:hover, .title a:active,
 	.meta a:hover, .meta a:active {
 		color: #8e0039;
+	}
+
+	.title {
+		position: relative;
+		border-bottom: 2px dotted #222;
+	}
+
+	.title::after {
+		content: '\130F7';
+		color: #222;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		background-color: #f37767;
+		line-height: 1;
+		padding: 0.5rem;
+		font-size: 2rem;
+		transform: translateX(-50%) translateY(50%);
+	}
+
+	nav .buttons {
+		white-space: nowrap;
+	}
+
+	nav p {
+		margin-bottom: 1rem;
+	}
+
+	button {
+		background-color: #FBDD15;
+		border-color: #FBDD15;
+		color: #222;
+		font-family: 'Amarante', serif;
+		font-variant: small-caps;
+		text-transform: none;
+		font-size: 2rem;
+		font-weight: 300;
+		letter-spacing: normal;
+		height: auto;
+		padding: 0 2rem;
+	}
+
+	@media(min-width: 36rem) {
+		button::before, button::after {
+			display: inline-block;
+			font-size: 3rem;
+			vertical-align: middle;
+		}
+
+		button.new-sword::before {
+			transform: translateY(0.4rem);
+			content: '\1300E\00a0';
+		}
+
+		button.new-sorcerer::after {
+			transform: translateY(0.4rem) scale(-1, 1);
+			content: '\1301B\00a0';
+			font-size: 3.5rem;
+		}
 	}
 
 	main {
@@ -191,12 +254,6 @@
 		right: -2rem;
 	}
 
-	button.new {
-		position: absolute;
-		right: -0.25rem;
-		top: 1.75rem;
-	}
-
 	@media (min-width: 80rem) {
 		main > header {
 			padding: 0.5rem 0 0;
@@ -218,11 +275,6 @@
 
 		main header h1::after {
 			right: -4.5rem;
-		}
-
-		button.new {
-			right: -3.5rem;
-			top: 2.5rem;
 		}
 	}
 
@@ -296,7 +348,7 @@
 	}
 
 	#inventory::after {
-		content: '\130A1';
+		content: '\1300B';
 	}
 
 	#gift::after {
