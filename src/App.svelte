@@ -1,7 +1,7 @@
 <script>
 	import { newSorcerer, newSword, newTraveler, traveler } from "./store"
 
-	const overburden = $traveler.usedSlots() - $traveler.inventory.slots;
+	$: overburden = $traveler.usedSlots() - $traveler.inventory.slots;
 </script>
 
 <header class="title container">
