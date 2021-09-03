@@ -87,7 +87,7 @@
 			&.new-sorcerer::after {
 				transform: translateY(0.4rem) scale(-1, 1);
 				content: '\1301B\00a0';
-				font-size: 3.5rem;
+				font-size: 3.25rem;
 			}
 		}
 	}
