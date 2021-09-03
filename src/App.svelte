@@ -17,6 +17,10 @@
 <style lang="scss">
 	header, footer {
 		text-align: center;
+
+		@media print {
+			display: none;
+		}
 	}
 
 	header {

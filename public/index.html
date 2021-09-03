@@ -79,6 +79,16 @@
 			list-style: disc outside;
 			padding: 0 1.5em;
 		}
+
+		@media print {
+			.row {
+				display: block;
+			}
+
+			section {
+				page-break-inside: avoid;
+			}
+		}
 	</style>
 </body>
 </html>

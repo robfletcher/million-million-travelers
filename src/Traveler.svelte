@@ -49,6 +49,10 @@
 		p {
 			margin-bottom: 1rem;
 		}
+
+		@media print {
+			display: none;
+		}
 	}
 
 	.buttons {
