@@ -31,6 +31,8 @@
 </main>
 
 <style lang="scss">
+	@import "./style/theme.scss";
+
 	/** Milligram starts column layout at 40rem which is too small */
 	@media(max-width: 45rem) {
 		.row {
@@ -39,7 +41,7 @@
 	}
 
 	main {
-		background-color: rgba(240, 240, 221, 1);
+		background-color: $main-bg-color;
 		padding-bottom: 3rem;
 	}
 
@@ -60,10 +62,10 @@
 	}
 
 	button {
-		background-color: #FBDD15;
-		border-color: #FBDD15;
-		color: #222;
-		font-family: 'Amarante', serif;
+		background-color: $title-bg-color;
+		border-color: $title-bg-color;
+		color: $text-color;
+		font-family: $title-font;
 		font-variant: small-caps;
 		text-transform: none;
 		font-size: 2rem;

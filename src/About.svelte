@@ -14,6 +14,8 @@
 </header>
 
 <style lang="scss">
+	@import "./style/theme.scss";
+
 	header {
 		position: relative;
 		@media (min-width: 80rem) {
@@ -22,7 +24,7 @@
 	}
 
 	h1, h1::before, h1::after {
-		background-color: #fbdd15;
+		background-color: $title-bg-color;
 	}
 	
 	h1 {

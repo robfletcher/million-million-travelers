@@ -17,7 +17,9 @@
 </section>
 
 <style lang="scss">
-  section::after {
+	@import "./style/theme.scss";
+
+	section::after {
 		content: '\131A3';
 	}
 

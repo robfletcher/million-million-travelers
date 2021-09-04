@@ -14,7 +14,9 @@
 {/if}
 
 <style lang="scss">
-	section::after {
+	@import "./style/theme.scss";
+
+  section::after {
 		content: '\13080';
 	}
 </style>

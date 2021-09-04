@@ -23,6 +23,8 @@
 </section>
 
 <style lang="scss">
+	@import "./style/theme.scss";
+
 	section::after {
 		content: '\1300B';
 	}
@@ -42,7 +44,7 @@
 	}
 
 	.overburden {
-		color: #be0116;
+		color: $section-border-color;
 	}
 
 	.gear::after {

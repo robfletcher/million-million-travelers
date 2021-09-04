@@ -15,6 +15,8 @@
 </section>
 
 <style lang="scss">
+	@import "./style/theme.scss";
+
 	section::after {
 		content: '\1329D';
 	}

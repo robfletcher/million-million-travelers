@@ -15,6 +15,8 @@
 </footer>
 
 <style lang="scss">
+	@import "./style/theme.scss";
+
 	header, footer {
 		text-align: center;
 
@@ -26,15 +28,15 @@
 	header {
 		margin-top: 1rem;
 		position: relative;
-		border-bottom: 2px dotted #222;
+		border-bottom: 2px dotted $text-color;
 
 		&::after {
 			content: '\130F7';
-			color: #222;
+			color: $text-color;
 			position: absolute;
 			left: 50%;
 			bottom: 0;
-			background-color: #f37767;
+			background-color: $body-bg-color;
 			line-height: 1;
 			padding: 0.5rem;
 			font-size: 2rem;
@@ -60,7 +62,7 @@
 		text-decoration: underline;
 
 		&:hover, &:active {
-			color: #8e0039;
+			color: $active-link-color;
 		}
 	}
 </style>

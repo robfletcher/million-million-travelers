@@ -9,7 +9,9 @@
 </section>
 
 <style lang="scss">
-	section::after {
+	@import "./style/theme.scss";
+
+  section::after {
 		content: '\13144';
 	}
 </style>
